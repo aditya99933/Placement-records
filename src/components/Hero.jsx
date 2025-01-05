@@ -3,10 +3,10 @@ import React from 'react'
 function Hero() {
   return (
     <div className="bg-[url('/images/hero-bg.jpg')] bg-cover bg-center">
-      <div className="bg-black/70 w-full py-20">
-        <div className="text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            Placement Records
+      <div className="bg-black py5">
+        <div className="text-center px-4 max-w-6xl mx-auto">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 p-4 [text-stroke:2px_white] bg-gradient-to-r from-green-400 to-green-700 text-transparent bg-clip-text">
+            Placement Records 
           </h1>
         </div>
       </div>

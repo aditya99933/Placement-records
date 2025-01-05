@@ -10,7 +10,7 @@ function BatchSelector({ batches, selectedBatch, onBatchSelect }) {
             onClick={() => onBatchSelect(batch)}
             className={`px-6 py-3 rounded-lg transition-all transform hover:scale-105 ${
               selectedBatch === batch
-                ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                ? "bg-gradient-to-r from-green-400 to-green-800 text-white"
                 : "bg-gray-800 text-gray-300 hover:bg-gray-700"
             }`}
           >
