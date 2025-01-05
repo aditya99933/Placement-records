@@ -8,7 +8,7 @@ function Statistics({stats}) {
         <p className="text-2xl font-bold text-green-400">{stats.totalPlaced}</p>
       </div>
       <div className="text-center border-x border-indigo-200">
-        <p className="text-gray-200 text-l">Average Package</p>
+        <p className="text-gray-200 text-sm">Average Package</p>
         <p className="text-2xl font-bold text-green-400">{stats.avgPackage} LPA</p>
       </div>
       <div className="text-center">
