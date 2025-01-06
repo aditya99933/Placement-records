@@ -8,6 +8,8 @@ import CompanyTable from "./components/CompanyTable";
 import Footer from "./components/Footer";
 import { batchData2018_22 } from './data/Batch2018_22';
 import { batchData2019_23 } from './data/Batch2019_23';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   // Define available batches
@@ -50,6 +52,8 @@ function App() {
         </div>
       </main>
       <Footer />
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
