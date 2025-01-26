@@ -103,5 +103,4 @@ export const batchData2019_23 = [
     { name: "SKH Y-TEC INDIA PVT.LTD.", package: "3.00", placed: 1 },
     { name: "Posist Technologies", package: "7.00", placed: 2 },
 
-
   ];
