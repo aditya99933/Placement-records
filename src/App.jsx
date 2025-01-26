@@ -46,29 +46,30 @@ function App() {
   
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white font-poppins flex flex-col">
-            <Navbar />
-            <main className="pt-16 flex-grow">
-              <div>
-                <Hero />
-                <BatchSelector
-                  batches={batches}
-                  selectedBatch={selectedBatch}
-                  onBatchSelect={setSelectedBatch}
-                />
-                <div className="max-w-7xl mx-auto px-4 pb-16">
-                  <h2 className="text-3xl font-normal mb-2 py-2">
-                    Dr. Akhilesh Das Gupta Institute of Professional Studies - Batch {selectedBatch}
-                  </h2>
-                  <Statistics stats={stats} />
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xl font-semibold">Company Details</h3>
-                     {/* Filter Toggle Switch */}
-                     <div className="flex items-center gap-2">
+    <div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white font-poppins flex flex-col">
+              <Navbar />
+              <main className="pt-16 flex-grow">
+                <div>
+                  <Hero />
+                  <BatchSelector
+                    batches={batches}
+                    selectedBatch={selectedBatch}
+                    onBatchSelect={setSelectedBatch}
+                  />
+                  <div className="max-w-7xl mx-auto px-4 pb-16">
+                    <h2 className="text-3xl font-normal mb-2 py-2">
+                      Dr. Akhilesh Das Gupta Institute of Professional Studies - Batch {selectedBatch}
+                    </h2>
+                    <Statistics stats={stats} />
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl font-semibold">Company Details</h3>
+                      {/* Filter Toggle Switch */}
+                      <div className="flex items-center gap-2">
                         <label className="relative inline-flex items-center cursor-pointer">
                           <input
                             type="checkbox"
@@ -82,54 +83,33 @@ function App() {
                           Show Mass Hiring Companies 
                         </span>
                       </div>
-                    <div className="flex gap-4">
-                      <Link
-                        to={`/charts/${selectedBatch}`}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg"
-                      >
-                        View Charts
-                      </Link>
+                      <div className="flex gap-4">
+                        <Link
+                          to={`/charts/${selectedBatch}`}
+                          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg"
+                        >
+                          View Charts
+                        </Link>
+                      </div>
                     </div>
+                    {/* Display filtered results count */}
+                    {showMassHiring && (
+                      <div className="text-sm text-gray-400 mb-2">
+                        Showing {filteredCompanies.length} companies with more than 10 offers
+                      </div>
+                    )}
+                    <CompanyTable companies={filteredCompanies} />
                   </div>
-                  {/* Display filtered results count */}
-                  {showMassHiring && (
-                    <div className="text-sm text-gray-400 mb-2">
-                      Showing {filteredCompanies.length} companies with more than 10 offers
-                    </div>
-                  )}
-                  <CompanyTable companies={filteredCompanies} />
                 </div>
-              </div>
-            </main>
-            <Footer />
-          </div>
-        }
-      />
-      <Route path="/charts/:batch" element={<Charts />} />
-    </Routes>
-
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white font-poppins flex flex-col">
-      <Navbar />
-      <main className="pt-16 flex-grow">
-        <div>
-          <Hero />
-          <BatchSelector 
-            batches={batches} 
-            selectedBatch={selectedBatch} 
-            onBatchSelect={setSelectedBatch} 
-          />
-          <div className="max-w-7xl mx-auto px-4 pb-16">
-            <h2 className="text-3xl font-normal mb-2 py-2">
-              Dr. Akhilesh Das Gupta Institute of Professional Studies  - Batch {selectedBatch}
-            </h2>
-            <Statistics stats={stats} />
-            <CompanyTable companies={currentBatchData} />
-          </div>
-        </div>
-      </main>
-      <Footer />
-      <SpeedInsights />
-      <Analytics />
+              </main>
+              <Footer />
+              <SpeedInsights />
+              <Analytics />
+            </div>
+          }
+        />
+        <Route path="/charts/:batch" element={<Charts />} />
+      </Routes>
     </div>
   );
 }
