@@ -14,7 +14,7 @@ const Campus = () => {
   useEffect(() => {
     const fetchCampusJobs = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/campus');
+        const { data } = await axios.get('https://placement-records.onrender.com/api/campus');
         setCampusJobs(data);
       } catch (error) {
         console.error('Error fetching campus jobs:', error);
@@ -38,7 +38,7 @@ const Campus = () => {
   const handleDelete = async (jobId) => {
     if (window.confirm('Are you sure you want to delete this campus job?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/campus/${jobId}`);
+        await axios.delete(`https://placement-records.onrender.com/api/campus/${jobId}`);
         setCampusJobs(campusJobs.filter(job => job._id !== jobId));
         showToast('Campus job deleted successfully!', 'success');
       } catch (error) {
