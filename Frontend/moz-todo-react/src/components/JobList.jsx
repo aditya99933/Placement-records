@@ -20,7 +20,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/jobs');
+        const { data } = await axios.get('https://placement-records.onrender.com/api/jobs');
         setJobs(data);
         setFilteredJobs(data);
       } catch (error) {
@@ -71,7 +71,7 @@ const JobList = () => {
   const handleDelete = async (jobId) => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/jobs/${jobId}`);
+        await axios.delete(`https://placement-records.onrender.com/api/jobs/${jobId}`);
         const updatedJobs = jobs.filter(job => job._id !== jobId);
         setJobs(updatedJobs);
         setFilteredJobs(filteredJobs.filter(job => job._id !== jobId));
