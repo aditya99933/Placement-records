@@ -12,7 +12,7 @@ export default function JobDetailsPage() {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/jobs/${id}`);
+        const res = await fetch(`https://placement-records.onrender.com/api/jobs/${id}`);
         const data = await res.json();
         setJob(data);
       } catch (error) {
