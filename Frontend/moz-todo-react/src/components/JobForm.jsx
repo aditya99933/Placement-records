@@ -26,7 +26,7 @@ const JobForm = () => {
 
     try {
       let payload = {};
-      let apiEndpoint = 'http://localhost:5000/api/jobs';
+      let apiEndpoint = 'https://placement-records.onrender.com/api/jobs';
       
       // Convert plain text to HTML with line breaks
       const convertToHtml = (text) => {
@@ -46,7 +46,7 @@ const JobForm = () => {
           salary: formData.salary,
           location: formData.location
         };
-        apiEndpoint = 'http://localhost:5000/api/campus';
+        apiEndpoint = 'https://placement-records.onrender.com/api/campus';
       } else if (mode === 'scrape') {
         payload = {
           url: formData.url,
