@@ -11,7 +11,7 @@ const campusRoutes = require("./routes/campusRoutes.js");
 const app = express();
 
 
-const allowedOrigins = ["https://placement-records.vercel.app/"];
+const allowedOrigins = ["https://placement-records.vercel.app"];
 
 app.use(cors({
   origin: allowedOrigins,
