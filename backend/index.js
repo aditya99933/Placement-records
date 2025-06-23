@@ -12,8 +12,9 @@ const app = express();
 
 
 const allowedOrigins = [
-  "https://placement-records.vercel.app",  // your frontend
-  "https://www.adgipshub.live"
+  "https://placement-records.vercel.app",
+  "http://localhost:5173",
+  "https://www.adgipshub.live" // ← only if needed
 ];
 
 app.use(cors({
@@ -21,12 +22,12 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.log("Blocked by CORS:", origin);
       callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
 }));
-
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
