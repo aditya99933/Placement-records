@@ -97,7 +97,9 @@ function Placement() {
                   </div>
                 </div>
               </main>
-              <Footer />
+              <div className="mb-15 md:mb-0">
+                <Footer />
+              </div>
             </div>
           }
         />

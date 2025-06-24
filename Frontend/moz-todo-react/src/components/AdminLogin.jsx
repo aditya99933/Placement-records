@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { X } from 'lucide-react';
 import axios from 'axios';
 
 const AdminLogin = ({ onLogin }) => {
@@ -43,7 +44,15 @@ const AdminLogin = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center">
-      <div className="bg-gray-900 p-8 rounded-lg w-96">
+      <div className="bg-gray-900 p-8 rounded-lg w-96 relative">
+        {/* Close Button */}
+        <button
+          onClick={() => navigate('/')}
+          className="absolute top-4 right-4 p-2 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded transition"
+          title="Back to Home"
+        >
+          <X className="w-5 h-5" />
+        </button>
         <h2 className="text-2xl font-bold text-green-500 mb-6 text-center">Admin Login</h2>
         
         <form onSubmit={handleSubmit} className="space-y-4">

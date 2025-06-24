@@ -7,7 +7,9 @@ const Jobs = () => {
     <>
       <Navbar />
       <JobList />
-      <Footer />
+      <div className="mb-15 md:mb-0">
+        <Footer />
+      </div>
       
     </>
   );

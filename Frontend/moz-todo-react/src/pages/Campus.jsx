@@ -113,13 +113,13 @@ const Campus = () => {
                 
                 {/* Package Offered */}
                 <div className="flex items-center gap-2 mb-3">
-                  <DollarSign className="w-4 h-4 text-yellow-400" />
+                  <DollarSign className="w-5 h-5 text-yellow-400" />
                   <span className="text-gray-300">Package: {job.salary || 'Not Disclosed'}</span>
                 </div>
                 
                 {/* Last Date */}
                 <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-4 h-4 text-red-400" />
+                  <Calendar className="w-5 h-5 text-red-400" />
                   <span className="text-gray-300">Last Date: {job.lastDate ? new Date(job.lastDate).toLocaleDateString() : 'Not Specified'}</span>
                 </div>
                 

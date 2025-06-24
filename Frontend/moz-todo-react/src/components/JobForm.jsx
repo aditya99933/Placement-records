@@ -14,7 +14,8 @@ const JobForm = () => {
     url: '',
     applyLink: '',
     branch: '',
-    salary: ''
+    salary: '',
+    lastDate: ''
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -88,10 +89,13 @@ const JobForm = () => {
         company: '',
         location: '',
         jobType: 'Full-time',
+        experience: '',
+        description: '',
+        url: '',
         applyLink: '',
         branch: '',
         salary: '',
-        lastDate: '',
+        lastDate: ''
       });
     } catch (error) {
       setMessage('Error creating job: ' + error.response?.data?.message);

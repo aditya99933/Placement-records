@@ -107,7 +107,7 @@ export default function JobDetailsPage() {
         />
       )}
       
-      <div className="px-4 py-6 max-w-5xl mx-auto text-gray-100 pb-20 md:pb-6">
+      <div className="px-4 py-6 max-w-5xl mx-auto text-gray-100 pb-4 md:pb-6">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-400 mb-2">
           <Link to="/" className="hover:underline">Home</Link> &gt; <Link to="/jobs" className="hover:underline">Jobs</Link> &gt; {job.title}
@@ -151,7 +151,9 @@ export default function JobDetailsPage() {
           </div>
         )}
       </div>
-      <Footer />
+      <div className="mb-15 md:mb-0">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -68,7 +68,7 @@ const formatStructuredDescription = (description) => {
 };
 
 const processJob = async (req, res) => {
-  const { url, title, company, location, jobType, experience, description, descriptionHtml } = req.body;
+  const { url, title, company, location, jobType, experience, description, descriptionHtml, applyLink } = req.body;
 
   if (!title || !company) {
     return res.status(400).json({ message: 'Title and company are required' });
@@ -143,7 +143,7 @@ const processJob = async (req, res) => {
       experience: experience || 'Not Specified',
       descriptionHtml: finalDescriptionHtml,
       description: finalDescription,
-      applyLink: url || ''
+      applyLink: applyLink || ''
     });
 
     res.status(201).json({
