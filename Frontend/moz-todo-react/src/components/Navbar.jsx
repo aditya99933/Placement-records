@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Home, Briefcase, Users, GraduationCap } from 'lucide-react';
+import { Home, Briefcase, Users, GraduationCap, UserCheck, LogOut } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -39,11 +39,19 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2">
           {isAdmin ? (
-            <button onClick={handleLogout} className="text-red-400 hover:text-red-300 text-sm">
+            <button 
+              onClick={handleLogout} 
+              className="flex items-center gap-2 px-3 py-1 border border-red-500 text-red-400 hover:bg-red-500 hover:text-white rounded transition text-sm"
+            >
+              <LogOut className="w-4 h-4" />
               Logout
             </button>
           ) : (
-            <Link to="/admin-login" className="text-green-400 hover:text-green-300 text-sm">
+            <Link 
+              to="/admin-login" 
+              className="flex items-center gap-2 px-3 py-1 border border-green-500 text-green-400 hover:bg-green-500 hover:text-black rounded transition text-sm"
+            >
+              <UserCheck className="w-4 h-4" />
               Admin
             </Link>
           )}
@@ -98,14 +106,16 @@ const Navbar = () => {
               onClick={handleLogout} 
               className="flex flex-col items-center p-2 rounded text-red-400 hover:text-red-300 transition"
             >
-              <span className="text-xs">Logout</span>
+              <LogOut className="w-5 h-5" />
+              <span className="text-xs mt-1">Logout</span>
             </button>
           ) : (
             <Link 
               to="/admin-login" 
               className="flex flex-col items-center p-2 rounded text-gray-400 hover:text-green-500 transition"
             >
-              <span className="text-xs">Admin</span>
+              <UserCheck className="w-5 h-5" />
+              <span className="text-xs mt-1">Admin</span>
             </Link>
           )}
         </div>
