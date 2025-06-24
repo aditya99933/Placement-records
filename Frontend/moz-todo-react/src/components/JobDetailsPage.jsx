@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
+import Toast from "./Toast";
 
 export default function JobDetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [toast, setToast] = useState(null);
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -24,6 +27,15 @@ export default function JobDetailsPage() {
 
     fetchJob();
   }, [id]);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setToast({ message: 'Link copied to clipboard!', type: 'success' });
+    } catch (error) {
+      setToast({ message: 'Failed to copy link', type: 'error' });
+    }
+  };
 
   const renderDescription = () => {
     if (!job) return null;
@@ -85,7 +97,17 @@ export default function JobDetailsPage() {
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
-      <div className="px-4 py-6 max-w-5xl mx-auto text-gray-100">
+      
+      {/* Toast Notification */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+      
+      <div className="px-4 py-6 max-w-5xl mx-auto text-gray-100 pb-20 md:pb-6">
         {/* Breadcrumb */}
         <div className="text-sm text-gray-400 mb-2">
           <Link to="/" className="hover:underline">Home</Link> &gt; <Link to="/jobs" className="hover:underline">Jobs</Link> &gt; {job.title}
@@ -97,7 +119,13 @@ export default function JobDetailsPage() {
 
         {/* Social Buttons */}
         <div className="flex space-x-3 mb-6">
-          <a href={job.applyLink} target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-800 rounded hover:bg-gray-700">🔗</a>
+          <button 
+            onClick={copyToClipboard}
+            className="p-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+            title="Copy link to clipboard"
+          >
+            🔗
+          </button>
         </div>
         
         <h2 className="text-3xl font-bold text-white mb-6">About the Job</h2>
@@ -123,6 +151,7 @@ export default function JobDetailsPage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
