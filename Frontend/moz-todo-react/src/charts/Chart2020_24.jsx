@@ -5,17 +5,21 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
@@ -32,26 +36,29 @@ function Chart2020_24() {
         label: "Branch-wise Statistics (2020-24)",
         data: [173, 169, 75, 43, 25, 26, 72, 21],
         backgroundColor: [
-          "rgba(75, 192, 192, 0.6)",
-          "rgba(54, 162, 235, 0.6)",
-          "rgba(255, 206, 86, 0.6)",
-          "rgba(219, 255, 99, 0.6)",
-          "rgba(102, 255, 120, 0.6)",
-          "rgba(255, 159, 64, 0.6)",
-          "rgba(104, 99, 255, 0.6)",
-          "rgba(255, 99, 132, 0.6)",
+          "#22c55e",
+          "#16a34a",
+          "#4ade80",
+          "#22d3ee",
+          "#a21caf",
+          "#facc15",
+          "#f59e42",
+          "#f472b6",
         ],
         borderColor: [
-          "rgba(75, 192, 192, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(219, 255, 99, 1)",
-          "rgba(102, 255, 120, 1)",
-          "rgba(255, 159, 64, 1)",
-          "rgba(104, 99, 255, 1)",
-          "rgba(255, 99, 132, 1)",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
+          "#bbf7d0",
         ],
-        borderWidth: 1,
+        borderWidth: 2,
+        borderRadius: 8,
+        barPercentage: 0.7,
+        categoryPercentage: 0.7,
       },
     ],
   };
@@ -63,9 +70,10 @@ function Chart2020_24() {
       legend: {
         position: "top",
         labels: {
-          font: {
-            size: 12
-          }
+          color: '#fff',
+          font: { size: 14, weight: 'bold' },
+          usePointStyle: false, // Remove colored box
+          boxWidth: 0, // Hide box
         }
       },
       tooltip: {
@@ -75,29 +83,101 @@ function Chart2020_24() {
             return `${context.label} (${groups[context.dataIndex]}): ${context.parsed.y}`;
           },
         },
+        backgroundColor: '#222',
+        titleColor: '#22c55e',
+        bodyColor: '#fff',
+        borderColor: '#22c55e',
+        borderWidth: 1,
       },
       datalabels: {
-        color: '#000',
-        anchor: 'center',
-        align: 'center',
+        color: '#fff',
+        anchor: 'end',
+        align: 'top',
         font: {
-          size: 12,
-          weight: 'bold'
-        }
+          size: 18,
+          weight: 'bold',
+        },
+        backgroundColor: 'rgba(0,0,0,0.7)',
+        borderRadius: 6,
+        padding: 4,
+        clamp: true,
+        display: true,
+        formatter: function(value) {
+          return value;
+        },
+      },
+      scales: {
+        y: {
+          max: 210, // adjust as needed for your data
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: '#fff', font: { weight: 'bold' } },
+        grid: { color: 'rgba(255,255,255,0.08)' }
+      },
+      y: {
+        ticks: { color: '#fff', font: { weight: 'bold' } },
+        grid: { color: 'rgba(255,255,255,0.08)' }
       }
     }
   };
 
+  const lineData = {
+    labels: chartData.labels,
+    datasets: [
+      {
+        label: 'Branch-Wise Trend',
+        data: chartData.datasets[0].data,
+        borderColor: '#22c55e',
+        backgroundColor: 'rgba(34,197,94,0.2)',
+        pointBackgroundColor: chartData.datasets[0].backgroundColor,
+        pointBorderColor: '#fff',
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+  const lineOptions = {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: '#fff', font: { weight: 'bold' } } },
+      tooltip: { backgroundColor: '#222', titleColor: '#22c55e', bodyColor: '#fff' },
+      datalabels: {
+        color: '#fff',
+        anchor: 'end',
+        align: 'top',
+        font: {
+          size: 18,
+          weight: 'bold',
+        },
+        backgroundColor: 'rgba(0,0,0,0.7)',
+        borderRadius: 6,
+        padding: 4,
+        clamp: true,
+        display: true,
+        formatter: function(value) {
+          return value;
+        },
+      },
+    },
+    scales: {
+      x: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.08)' } },
+      y: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.08)' } },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-semibold">Batch 2020-24 Statistics</h2>
-          
-        </div>
-        <div className="bg-white rounded-lg p-6" style={{ height: '500px' }}>
+    <div className="w-full max-w-full px-1 md:px-6 py-4">
+      <div className="backdrop-blur-lg bg-black/60 border border-green-700/40 shadow-2xl rounded-2xl p-2 md:p-8 w-full min-h-[300px] h-[60vw] max-h-[500px] flex flex-col justify-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-green-400 text-center drop-shadow-lg">Batch 2020-24 Statistics</h2>
+        <div className="relative w-full h-full min-h-[250px]">
           <Bar data={chartData} options={options} />
         </div>
+      </div>
+      <div className="backdrop-blur-lg bg-black/60 border border-green-700/40 shadow-2xl rounded-2xl p-2 md:p-8 w-full min-h-[300px] h-[60vw] max-h-[500px] flex flex-col justify-center">
+        <Line data={lineData} options={lineOptions} plugins={[ChartDataLabels]} />
       </div>
     </div>
   );

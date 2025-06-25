@@ -16,19 +16,23 @@ function Charts() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white font-poppins">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-semibold">Placement Statistics Charts</h1>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-8 text-center sm:text-left">
+        <h1 className="text-2xl sm:text-3xl font-extrabold">Placement Statistics Charts</h1>
+        <div className="fixed bottom-4 left-4 right-4 w-auto z-50 rounded-lg sm:static sm:w-auto sm:z-auto bg-red-800 sm:bg-red-800">
           <Link
-            to="/"
-            className="bg-green-800 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg"
+            to="/placement"
+            className="block text-center text-white font-semibold py-2 px-4 rounded-lg w-full sm:inline-block sm:w-auto hover:bg-red-900"
           >
-            Back to Home
+            Close
           </Link>
         </div>
+      </div>
 
-        <div className="bg-gray-800 p-6 rounded-lg w-full">
-          {getChart()}
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-2xl sm:max-w-4xl md:max-w-5xl lg:max-w-6xl">
+            {getChart()}
+          </div>
         </div>
       </div>
     </div>

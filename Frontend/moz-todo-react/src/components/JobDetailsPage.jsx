@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Toast from "./Toast";
+import { ExternalLink } from 'lucide-react';
 
 export default function JobDetailsPage() {
   const { id } = useParams();
@@ -55,14 +56,12 @@ export default function JobDetailsPage() {
     
     if (!text) return <p className="text-gray-300">No description available</p>;
     
-    return text.split('\n').map((line, index) => {
+    return text.split('\n').map((line, index, arr) => {
       // Skip empty lines but add spacing
       if (!line.trim()) {
         return <div key={index} className="h-3"></div>;
       }
-      
       const trimmedLine = line.trim();
-      
       // More flexible bullet point detection
       if (trimmedLine.startsWith('•') || 
           trimmedLine.startsWith('-') || 
@@ -70,10 +69,8 @@ export default function JobDetailsPage() {
           trimmedLine.startsWith('- ') ||
           trimmedLine.startsWith('* ') ||
           trimmedLine.startsWith('• ')) {
-        
         // Remove the bullet character and any following spaces
         const bulletText = trimmedLine.replace(/^[•\-\*]\s*/, '');
-        
         return (
           <div key={index} className="flex items-start mb-3">
             <span className="text-green-400 font-bold mr-3 mt-1 text-lg">•</span>
@@ -81,12 +78,22 @@ export default function JobDetailsPage() {
           </div>
         );
       }
-      
+      // Detect subheadings: not a bullet, not empty, surrounded by empty lines or Title Case/ALL CAPS
+      const prevEmpty = index === 0 || !arr[index - 1].trim();
+      const nextEmpty = index === arr.length - 1 || !arr[index + 1].trim();
+      const isLikelyHeading =
+        prevEmpty && nextEmpty &&
+        trimmedLine.length < 60 &&
+        /([A-Z][a-z]+\s)+[A-Z][a-z]+/.test(trimmedLine) ||
+        /^[A-Z\s]+$/.test(trimmedLine);
+      if (isLikelyHeading) {
+        return (
+          <p key={index} className="text-gray-100 font-semibold text-lg mb-2 mt-4">{line}</p>
+        );
+      }
       // Regular line
       return (
-        <p key={index} className="text-gray-300 mb-4 leading-relaxed">
-          {line}
-        </p>
+        <p key={index} className="text-gray-300 mb-4 leading-relaxed">{line}</p>
       );
     });
   };
@@ -117,37 +124,38 @@ export default function JobDetailsPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{job.title}</h1>
         <div className="text-lg text-gray-400 mb-4">{job.company} | {job.location}</div>
 
-        {/* Social Buttons */}
-        <div className="flex space-x-3 mb-6">
-          <button 
-            onClick={copyToClipboard}
-            className="p-2 bg-gray-800 rounded hover:bg-gray-700 transition"
-            title="Copy link to clipboard"
-          >
-            🔗
-          </button>
-        </div>
-        
         <h2 className="text-3xl font-bold text-white mb-6">About the Job</h2>
-
         {/* Job Description */}
-        <div className="bg-gray-900 rounded-lg p-6 mb-6">
+        <div className="bg-gray-900 rounded-lg p-6 mb-6 w-full">
           <div className="space-y-1">
             {renderDescription()}
           </div>
         </div>
 
-        {/* Apply Button */}
-        {job.applyLink && (
-          <div className="mt-6">
-            <a 
-              href={job.applyLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition"
+        {/* Apply & Copy Buttons */}
+        {(job.applyLink || true) && (
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            {job.applyLink && (
+              <a 
+                href={job.applyLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition gap-2"
+              >
+                <ExternalLink className="w-5 h-5" />
+                Apply Now
+              </a>
+            )}
+            <button 
+              onClick={copyToClipboard}
+              className="inline-flex items-center px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition gap-2"
+              title="Copy link to clipboard"
             >
-              Apply Now
-            </a>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75M15.75 6v12a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h7.5A2.25 2.25 0 0115.75 6z" />
+              </svg>
+              Copy & Share
+            </button>
           </div>
         )}
       </div>
