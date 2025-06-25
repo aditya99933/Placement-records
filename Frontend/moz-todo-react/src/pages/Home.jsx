@@ -193,21 +193,29 @@ const Home = () => {
           Our <span className="text-green-500">Impact</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300">
+          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300 text-center">
             <div className="text-4xl md:text-6xl font-extrabold text-green-400 mb-2 drop-shadow-lg animate-pulse">15+</div>
-            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">Daily Job Postings</div>
+            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">
+              Daily Job<br />Postings
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300">
+          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300 text-center">
             <div className="text-4xl md:text-6xl font-extrabold text-blue-400 mb-2 drop-shadow-lg">3Yr+</div>
-            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">Placement Records</div>
+            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">
+              Placement<br />Records
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300">
+          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300 text-center">
             <div className="text-4xl md:text-6xl font-extrabold text-purple-400 mb-2 drop-shadow-lg">5+</div>
-            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">Ongoing Placements</div>
+            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">
+              Ongoing<br />Placements
+            </div>
           </div>
-          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300">
+          <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300 text-center">
             <div className="text-4xl md:text-6xl font-extrabold text-yellow-400 mb-2 drop-shadow-lg">10+</div>
-            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">Upcoming Drives</div>
+            <div className="text-gray-200 md:text-xl font-semibold tracking-wide">
+              Upcoming<br />Drives
+            </div>
           </div>
         </div>
       </section>
