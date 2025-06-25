@@ -194,7 +194,7 @@ const Home = () => {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="flex flex-col items-center justify-center bg-black/30 rounded-xl p-6 shadow border border-[#232b36] hover:scale-105 hover:bg-black/50 transition-transform duration-300 text-center">
-            <div className="text-4xl md:text-6xl font-extrabold text-green-400 mb-2 drop-shadow-lg animate-pulse">15+</div>
+            <div className="text-4xl md:text-6xl font-extrabold text-green-400 mb-2 drop-shadow-lg">15+</div>
             <div className="text-gray-200 md:text-xl font-semibold tracking-wide">
               Daily Job<br />Postings
             </div>
