@@ -137,3 +137,14 @@ body {
     @apply bg-background text-foreground;
     }
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background: linear-gradient(120deg, #166534, #000, #22d3ee, #fde047, #166534);
+  background-size: 300% 300%;
+  animation: gradientBG 12s ease-in-out infinite;
+}
