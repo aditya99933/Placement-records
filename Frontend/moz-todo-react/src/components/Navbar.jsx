@@ -29,38 +29,32 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar - Top */}
-      <nav className="hidden md:flex sticky top-0 z-50 bg-black text-white px-2 md:px-4 py-3 shadow-lg">
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <img src="/icon7.svg" alt="Logo" className="w-10 h-10" />
-            <h1 className="text-white-500 text-xl font-bold">ADGIPS Hub</h1>
-          </div>
-          <div className="flex-1 flex justify-center gap-6">
-            <Link to="/" className={`px-3 py-1 rounded transition ${pathname === '/' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Home</Link>
-            <Link to="/placement" className={`px-3 py-1 rounded transition ${pathname === '/placement' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Placement</Link>
-            <Link to="/campus" className={`px-3 py-1 rounded transition ${pathname === '/campus' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Campus</Link>
-            <Link to="/jobs" className={`px-3 py-1 rounded transition ${pathname === '/jobs' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Jobs</Link>
-          </div>
-          <div className="flex items-center gap-2">
-            {isAdmin ? (
-              <button 
-                onClick={handleLogout} 
-                className="flex items-center gap-2 px-3 py-1 border border-red-500 text-red-400 hover:bg-red-500 hover:text-white rounded transition text-sm"
-              >
-                <LogOut className="w-4 h-4" />
-                Logout
-              </button>
-            ) : (
-              <Link 
-                to="/admin-login" 
-                className="flex items-center gap-1 px-3 py-1  bg-gray-800 text-green-400 rounded-full text-base font-medium shadow hover:bg-green-700 hover:text-white transition cursor-pointer border border-green-700"
-              >
-              
-                <UserCheck className="w-4 h-4" />
-                Admin
-              </Link>
-            )}
-          </div>
+      <nav className="hidden md:flex sticky top-0 z-50 bg-black text-white px-4 py-3 justify-between items-center shadow-lg">
+        <h1 className="text-green-500 text-xl font-bold">ADGIPS Hub</h1>
+        <div className="flex-1 flex justify-center gap-6">
+          <Link to="/" className={`border border-green-500 px-3 py-1 rounded transition ${pathname === '/' ? 'bg-green-500 text-black' : 'text-green-500 hover:bg-green-500 hover:text-black'}`}>Home</Link>
+          <Link to="/placement" className={`border border-green-500 px-3 py-1 rounded transition ${pathname === '/placement' ? 'bg-green-500 text-black' : 'text-green-500 hover:bg-green-500 hover:text-black'}`}>Placement</Link>
+          <Link to="/campus" className={`border border-green-500 px-3 py-1 rounded transition ${pathname === '/campus' ? 'bg-green-500 text-black' : 'text-green-500 hover:bg-green-500 hover:text-black'}`}>Campus</Link>
+          <Link to="/jobs" className={`border border-green-500 px-3 py-1 rounded transition ${pathname === '/jobs' ? 'bg-green-500 text-black' : 'text-green-500 hover:bg-green-500 hover:text-black'}`}>Jobs</Link>
+        </div>
+        <div className="flex items-center gap-2">
+          {isAdmin ? (
+            <button 
+              onClick={handleLogout} 
+              className="flex items-center gap-2 px-3 py-1 border border-red-500 text-red-400 hover:bg-red-500 hover:text-white rounded transition text-sm"
+            >
+              <LogOut className="w-4 h-4" />
+              Logout
+            </button>
+          ) : (
+            <Link 
+              to="/admin-login" 
+              className="flex items-center gap-2 px-3 py-1 border border-green-500 text-green-400 hover:bg-green-500 hover:text-black rounded transition text-sm"
+            >
+              <UserCheck className="w-4 h-4" />
+              Admin
+            </Link>
+          )}
         </div>
       </nav>
 

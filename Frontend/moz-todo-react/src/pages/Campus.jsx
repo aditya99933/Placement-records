@@ -23,7 +23,6 @@ const Campus = () => {
       }
     };
 
-    // Check admin status
     const token = localStorage.getItem('token');
     const adminStatus = localStorage.getItem('isAdmin');
     setIsAdmin(token && adminStatus === 'true');
@@ -51,7 +50,7 @@ const Campus = () => {
   return (
     <div className="min-h-screen bg-black text-white pb-20 md:pb-0">
       <Navbar />
-      
+
       {/* Toast Notification */}
       {toast && (
         <Toast
@@ -60,16 +59,17 @@ const Campus = () => {
           onClose={() => setToast(null)}
         />
       )}
-      
+
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold text-green-500 mb-6 text-left">Ongoing Campus Drives</h1>
-        
+
         {loading ? (
           <div className="text-center text-gray-400">Loading campus jobs...</div>
         ) : campusJobs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {campusJobs.map((job) => (
               <div key={job._id} className="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow relative">
+
                 {/* Delete Button - Top Right Corner */}
                 {isAdmin && (
                   <button
@@ -83,48 +83,48 @@ const Campus = () => {
 
                 {/* Job Title */}
                 <h3 className="text-xl font-semibold text-white mb-2">{job.title}</h3>
-                
+
                 {/* Company Name */}
                 <p className="text-green-400 font-medium mb-4">{job.company}</p>
-                
+
                 {/* Eligible Branches */}
                 {job.branch && (
-                  <div className="flex items-center gap-2 mb-3">
-                    <GraduationCap className="w-4 h-4 text-purple-400" />
+                  <div className="flex items-start gap-2 mb-3">
+                    <GraduationCap className="w-4 h-4 text-purple-400 mt-1 flex-shrink-0" />
                     <span className="text-gray-300">Eligible: {job.branch}</span>
                   </div>
                 )}
-                
+
                 {/* Location */}
                 {job.location && (
-                  <div className="flex items-center gap-2 mb-3">
-                    <MapPin className="w-4 h-4 text-blue-400" />
+                  <div className="flex items-start gap-2 mb-3">
+                    <MapPin className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
                     <span className="text-gray-300">Location: {job.location}</span>
                   </div>
                 )}
-                
+
                 {/* Job Type */}
                 {job.jobType && (
-                  <div className="flex items-center gap-2 mb-3">
-                    <Briefcase className="w-4 h-4 text-orange-400" />
+                  <div className="flex items-start gap-2 mb-3">
+                    <Briefcase className="w-4 h-4 text-orange-400 mt-1 flex-shrink-0" />
                     <span className="text-gray-300">Type: {job.jobType}</span>
                   </div>
                 )}
-                
+
                 {/* Package Offered */}
-                <div className="flex items-center gap-2 mb-3">
-                  <DollarSign className="w-5 h-5 text-yellow-400" />
+                <div className="flex items-start gap-2 mb-3">
+                  <DollarSign className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
                   <span className="text-gray-300">Package: {job.salary || 'Not Disclosed'}</span>
                 </div>
-                
+
                 {/* Last Date */}
-                <div className="flex items-center gap-2 mb-4">
-                  <Calendar className="w-5 h-5 text-red-400" />
+                <div className="flex items-start gap-2 mb-4">
+                  <Calendar className="w-4 h-4 text-red-400 mt-1 flex-shrink-0" />
                   <span className="text-gray-300">Last Date: {job.lastDate ? new Date(job.lastDate).toLocaleDateString() : 'Not Specified'}</span>
                 </div>
-                
+
                 {/* Apply Link */}
-                {job.url && (
+                {job.url ? (
                   <a 
                     href={job.url} 
                     target="_blank" 
@@ -134,9 +134,7 @@ const Campus = () => {
                     <ExternalLink className="w-4 h-4" />
                     Apply Now
                   </a>
-                )}
-                
-                {!job.url && (
+                ) : (
                   <div className="text-center text-gray-500 py-2">
                     No application link available
                   </div>
@@ -150,7 +148,7 @@ const Campus = () => {
           </div>
         )}
       </div>
-      
+
       <Footer />
     </div>
   );
