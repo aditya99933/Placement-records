@@ -4,6 +4,27 @@ import { MapPin, Clock, Plus, Trash2, Filter, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Toast from './Toast';
 
+const JobSkeleton = () => (
+  <div className="bg-gray-900 rounded-xl p-4 shadow animate-pulse">
+    <div className="flex flex-col md:flex-row justify-between">
+      <div className="flex-1">
+        <div className="h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
+        <div className="h-4 bg-gray-700 rounded w-1/2 mb-3"></div>
+        <div className="flex gap-2 mb-3">
+          <div className="h-5 bg-gray-700 rounded w-20"></div>
+          <div className="h-5 bg-gray-700 rounded w-16"></div>
+          <div className="h-5 bg-gray-700 rounded w-24"></div>
+        </div>
+        <div className="h-4 bg-gray-700 rounded w-full mb-2"></div>
+        <div className="h-4 bg-gray-700 rounded w-2/3"></div>
+      </div>
+      <div className="mt-4 md:mt-0 md:ml-4">
+        <div className="h-10 bg-gray-700 rounded w-32"></div>
+      </div>
+    </div>
+  </div>
+);
+
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
@@ -16,6 +37,16 @@ const JobList = () => {
     jobType: 'All Types',
     experience: 'All Experience Levels'
   });
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '2 Days Ago';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -261,7 +292,11 @@ const JobList = () => {
           </div>
           
           {loading ? (
-            <p className="text-gray-400">Loading jobs...</p>
+            <div className="space-y-4">
+              {[...Array(6)].map((_, index) => (
+                <JobSkeleton key={index} />
+              ))}
+            </div>
           ) : filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <div key={job._id} className="bg-gray-900 rounded-xl p-4 shadow flex flex-col md:flex-row justify-between relative">
@@ -308,7 +343,7 @@ const JobList = () => {
                   <div className="flex flex-col gap-2 justify-center mt-2 md:hidden">
                     <div className="flex flex-row items-center justify-between w-full">
                       <span className="flex items-center gap-2 text-gray-400 text-xs">
-                        {job.postedAgo || '2 Days Ago'}
+                        {formatDate(job.createdAt)}
                       </span>
                       <Link to={`/job-details/${job._id}`} className="inline-flex items-center gap-2 border border-white px-4 py-2 rounded-lg text-white hover:bg-gray-700 hover:text-white transition text-base font-semibold shadow-md ">
                         View Details
@@ -331,3 +366,4 @@ const JobList = () => {
 };
 
 export default JobList;
+
