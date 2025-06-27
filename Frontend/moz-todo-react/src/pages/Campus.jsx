@@ -5,6 +5,43 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Toast from "../components/Toast";
 
+const JobSkeleton = () => (
+  <div className="bg-gray-900 rounded-2xl p-6 shadow-lg animate-pulse">
+    {/* Job Title */}
+    <div className="h-6 bg-gray-700 rounded w-3/4 mb-2"></div>
+    
+    {/* Company Name */}
+    <div className="h-4 bg-gray-700 rounded w-1/2 mb-4"></div>
+    
+    {/* Job Details */}
+    <div className="space-y-3 mb-4">
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded w-32"></div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded w-28"></div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded w-24"></div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded w-36"></div>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 bg-gray-700 rounded"></div>
+        <div className="h-4 bg-gray-700 rounded w-40"></div>
+      </div>
+    </div>
+    
+    {/* Apply Button */}
+    <div className="h-10 bg-gray-700 rounded-lg w-full"></div>
+  </div>
+);
+
 const Campus = () => {
   const [campusJobs, setCampusJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -64,7 +101,11 @@ const Campus = () => {
         <h1 className="text-2xl font-bold text-green-500 mb-6 text-left">Ongoing Campus Drives</h1>
 
         {loading ? (
-          <div className="text-center text-gray-400">Loading campus jobs...</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(6)].map((_, index) => (
+              <JobSkeleton key={index} />
+            ))}
+          </div>
         ) : campusJobs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {campusJobs.map((job) => (
