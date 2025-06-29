@@ -1,7 +1,7 @@
 const Campus = require('../models/campus');
 
 const addCampusJob = async (req, res) => {
-  const { url, title, company, location, jobType, branch, salary,lastDate } = req.body;
+  const { url, title, company, location, jobType, branch, salary, lastDate } = req.body;
 
   if (!title || !company) {
     return res.status(400).json({ message: 'Title and company are required' });
@@ -16,7 +16,7 @@ const addCampusJob = async (req, res) => {
       jobType: jobType || 'Not Specified',
       branch: branch || '',
       salary: salary || 'Not Disclosed',
-      lastDate: lastDate ,
+      lastDate: lastDate || null,
     });
 
     res.status(201).json({
