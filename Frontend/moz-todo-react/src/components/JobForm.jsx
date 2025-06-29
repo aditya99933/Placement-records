@@ -45,7 +45,7 @@ const JobForm = () => {
           url: formData.applyLink,
           branch: formData.branch,
           salary: formData.salary,
-          location: formData.location
+          location: formData.location,
           lastDate: formData.lastDate
         };
         apiEndpoint = 'https://placement-records.onrender.com/api/campus';
@@ -358,3 +358,4 @@ const JobForm = () => {
 };
 
 export default JobForm;
+
