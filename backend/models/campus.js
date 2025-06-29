@@ -8,7 +8,7 @@ const campusSchema = new mongoose.Schema({
     jobType: {type: String, default: 'Not Specified'}, 
     branch: String,
     salary: {type: String, default: 'Not Disclosed'},
-    lastDate : {type : Date, default: Date.now()},
+    lastDate : {type : Date},
     }, { timestamps: true });
 
 module.exports = mongoose.model('Campus', campusSchema);
