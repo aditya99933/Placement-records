@@ -46,6 +46,7 @@ const JobForm = () => {
           branch: formData.branch,
           salary: formData.salary,
           location: formData.location
+          lastDate: formData.lastDate
         };
         apiEndpoint = 'https://placement-records.onrender.com/api/campus';
       } else if (mode === 'scrape') {
