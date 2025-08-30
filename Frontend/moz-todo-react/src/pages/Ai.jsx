@@ -18,16 +18,12 @@ const Ai = () => {
 
   return (
     <div>
-      <Navbar />
       <div></div>
         {!token ? (
             <Chatbot onAuthSuccess={setToken} />
         ) : (
             <Chatai token={token} />
         )}
-        <div className="mb-15 md:mb-0">
-          <Footer />
-        </div>
     </div>
   )
 }
