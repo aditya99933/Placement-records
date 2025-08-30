@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link to="/campus" className={`px-3 py-1 rounded transition ${pathname === '/campus' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Campus</Link>
             <Link to="/jobs" className={`px-3 py-1 rounded transition ${pathname === '/jobs' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Jobs</Link>
             <Link to="/notes" className={`px-3 py-1 rounded transition ${pathname === '/notes' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Notes</Link>
-            <Link to="/chatbot" className={`px-3 py-1 rounded transition ${pathname === '/chatbot' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Chatbot</Link>
+            <Link to="/ai" className={`px-3 py-1 rounded transition ${pathname === '/chatbot' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Chatbot</Link>
           </div>
           <div className="flex items-center gap-2">
             {isAdmin ? (
