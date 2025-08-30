@@ -11,7 +11,7 @@ const Chatbot = ({ onAuthSuccess }) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const apiBase = "http://localhost:5000/api/users"; 
+    const apiBase = "https://placement-records.onrender.com/api/users"; 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
