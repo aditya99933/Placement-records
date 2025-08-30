@@ -3,6 +3,8 @@ import axios from "axios";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import { Send, ExternalLink, Youtube, Globe, BookOpen } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 
 const Chatai = ({token}) => {
@@ -95,6 +97,7 @@ const Chatai = ({token}) => {
 
   return (
     <div className="min-h-screen bg-black text-white pb-20 md:pb-0">
+        <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-gray-900 rounded-2xl p-6 shadow-lg mb-6">
           <h2 className="text-2xl font-bold text-green-500 mb-4 flex items-center gap-2">
@@ -141,6 +144,7 @@ const Chatai = ({token}) => {
           </div>
         )}
       </div>
+      <Footer />  
     </div>
   )
 }
