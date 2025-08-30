@@ -14,7 +14,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/notes');
+        const { data } = await axios.get('https://placement-records.onrender.com/api/notes');
         setNotes(data);
       } catch (error) {
         console.error('Error fetching notes:', error);
@@ -37,7 +37,7 @@ const Notes = () => {
   const handleDelete = async (noteId) => {
     if (window.confirm('Are you sure you want to delete this note?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/notes/${noteId}`);
+        await axios.delete(`https://placement-records.onrender.com/notes/${noteId}`);
         setNotes(notes.filter(note => note._id !== noteId));
         showToast('Note deleted successfully!', 'success');
       } catch (error) {
@@ -49,7 +49,7 @@ const Notes = () => {
 
   const handleDownload = (pdfUrl, title) => {
     const link = document.createElement('a');
-    link.href = `http://localhost:5000${pdfUrl}`;
+    link.href = `https://placement-records.onrender.com${pdfUrl}`;
     link.download = `${title}.pdf`;
     link.target = '_blank';
     document.body.appendChild(link);
