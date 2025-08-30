@@ -44,7 +44,7 @@ const JobForm = () => {
         formDataToSend.append('title', formData.title);
         formDataToSend.append('pdf', selectedFile);
         
-        await axios.post('http://localhost:5000/api/notes', formDataToSend, {
+        await axios.post('https://placement-records.onrender.com/notes', formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${localStorage.getItem('token')}`
