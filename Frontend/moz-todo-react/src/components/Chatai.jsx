@@ -18,7 +18,7 @@ const Chatai = ({token}) => {
         setError(null);
         try {
         const response = await axios.post(
-            "http://localhost:5000/api/chat/message",
+            "https://placement-records.onrender.com/chat/message",
             { message: input },
             {
             headers: {
