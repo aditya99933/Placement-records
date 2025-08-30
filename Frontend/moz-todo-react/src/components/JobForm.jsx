@@ -3,7 +3,7 @@ import axios from 'axios';
 import Navbar from './Navbar';
 
 const JobForm = () => {
-  const [mode, setMode] = useState('manual'); // 'scrape', 'manual', 'fallback', 'campus'
+  const [mode, setMode] = useState('manual'); // 'scrape', 'manual', 'fallback', 'campus', 'notes'
   const [formData, setFormData] = useState({
     title: '',
     company: '',
@@ -17,6 +17,7 @@ const JobForm = () => {
     salary: '',
     lastDate: ''
   });
+  const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -37,7 +38,20 @@ const JobForm = () => {
           .replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
       };
       
-      if (mode === 'campus') {
+      if (mode === 'notes') {
+        // Notes mode - file upload
+        const formDataToSend = new FormData();
+        formDataToSend.append('title', formData.title);
+        formDataToSend.append('pdf', selectedFile);
+        
+        await axios.post('http://localhost:5000/api/notes', formDataToSend, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+        setMessage('Note uploaded successfully!');
+      } else if (mode === 'campus') {
         // Campus job mode
         payload = {
           title: formData.title,
@@ -45,7 +59,8 @@ const JobForm = () => {
           url: formData.applyLink,
           branch: formData.branch,
           salary: formData.salary,
-          location: formData.location
+          location: formData.location,
+          lastDate: formData.lastDate
         };
         apiEndpoint = 'https://placement-records.onrender.com/api/campus';
       } else if (mode === 'scrape') {
@@ -83,7 +98,9 @@ const JobForm = () => {
       }
 
       await axios.post(apiEndpoint, payload);
-      setMessage(`${mode === 'campus' ? 'Campus job' : 'Job'} created successfully!`);
+      if (mode !== 'notes') {
+        setMessage(`${mode === 'campus' ? 'Campus job' : 'Job'} created successfully!`);
+      }
       setFormData({
         title: '',
         company: '',
@@ -97,6 +114,7 @@ const JobForm = () => {
         salary: '',
         lastDate: ''
       });
+      setSelectedFile(null);
     } catch (error) {
       setMessage('Error creating job: ' + error.response?.data?.message);
     } finally {
@@ -121,7 +139,7 @@ const JobForm = () => {
           {/* Mode Selection */}
           <div className="bg-gray-900 p-4 rounded-lg mb-4">
             <h3 className="text-lg font-semibold text-white mb-3">Job Creation Mode</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               <label className="flex items-center space-x-2 cursor-pointer">
                 <input
                   type="radio"
@@ -166,10 +184,46 @@ const JobForm = () => {
                 />
                 <span className="text-white">Campus Job</span>
               </label>
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="mode"
+                  value="notes"
+                  checked={mode === 'notes'}
+                  onChange={(e) => setMode(e.target.value)}
+                  className="accent-green-500"
+                />
+                <span className="text-white">Notes</span>
+              </label>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-lg space-y-4">
+            {/* Notes Mode */}
+            {mode === 'notes' && (
+              <>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Note Title *"
+                  value={formData.title}
+                  onChange={handleChange}
+                  className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
+                  required
+                />
+                <div className="space-y-2">
+                  <label className="block text-white text-sm font-medium">Upload PDF *</label>
+                  <input
+                    type="file"
+                    accept=".pdf"
+                    onChange={(e) => setSelectedFile(e.target.files[0])}
+                    className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-green-500 file:text-white hover:file:bg-green-600"
+                    required
+                  />
+                </div>
+              </>
+            )}
+
             {/* URL Field - only for scrape and fallback modes */}
             {(mode === 'scrape' || mode === 'fallback') && (
               <input
@@ -183,31 +237,33 @@ const JobForm = () => {
               />
             )}
 
-            {/* Basic Info - always required */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="title"
-                placeholder="Job Title *"
-                value={formData.title}
-                onChange={handleChange}
-                className="p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
-                required
-              />
-              
-              <input
-                type="text"
-                name="company"
-                placeholder="Company *"
-                value={formData.company}
-                onChange={handleChange}
-                className="p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
-                required
-              />
-            </div>
+            {/* Basic Info - not for notes mode */}
+            {mode !== 'notes' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Job Title *"
+                  value={formData.title}
+                  onChange={handleChange}
+                  className="p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
+                  required
+                />
+                
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company *"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
+                  required
+                />
+              </div>
+            )}
 
             {/* Campus-specific fields */}
-            {mode === 'campus' && (
+            {mode === 'campus' && mode !== 'notes' && (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
@@ -264,8 +320,8 @@ const JobForm = () => {
               </>
             )}
 
-            {/* Regular job fields - not for campus mode */}
-            {mode !== 'campus' && (
+            {/* Regular job fields - not for campus or notes mode */}
+            {mode !== 'campus' && mode !== 'notes' && (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
@@ -334,6 +390,7 @@ const JobForm = () => {
               {mode === 'manual' && "Type your job description exactly as you want it to appear. Press Enter for new lines."}
               {mode === 'fallback' && "Job description will be scraped from URL. If scraping fails, the manual description will be used as fallback."}
               {mode === 'campus' && "Add campus placement opportunities with required details for students."}
+              {mode === 'notes' && "Upload study notes and materials for students. Only PDF files are supported."}
             </div>
             
             {message && (
@@ -347,7 +404,7 @@ const JobForm = () => {
               disabled={loading}
               className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition disabled:opacity-50"
             >
-              {loading ? 'Processing...' : `Create ${mode === 'campus' ? 'Campus Job' : 'Job'}`}
+              {loading ? 'Processing...' : mode === 'notes' ? 'Upload Note' : `Create ${mode === 'campus' ? 'Campus Job' : 'Job'}`}
             </button>
           </form>
         </div>
