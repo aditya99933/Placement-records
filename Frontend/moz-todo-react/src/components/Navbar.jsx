@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Home, Briefcase, Users, GraduationCap, UserCheck, LogOut } from 'lucide-react';
+import { Home, Briefcase, Users, GraduationCap, UserCheck, LogOut,BookOpen, MessageSquare } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -108,6 +108,15 @@ const Navbar = () => {
             <Briefcase className="w-5 h-5" />
             <span className="text-xs mt-1">Jobs</span>
           </Link>
+          <Link
+            to="/notes"
+            className={`flex flex-col items-center p-2 rounded transition ${
+              pathname === "/notes" ? "text-green-500" : "text-gray-400 hover:text-green-500"
+            }`}
+          >
+            <BookOpen className="w-5 h-5" />
+            <span className="text-xs mt-1">Notes</span>
+          </Link>
           
           {isAdmin ? (
             <button 
@@ -126,6 +135,12 @@ const Navbar = () => {
               <span className="text-xs mt-1">Admin</span>
             </Link>
           )}
+          <Link
+            to="/ai"
+            className="fixed bottom-20 right-5 bg-green-600 hover:bg-green-700 p-3 rounded-full shadow-lg z-50 transition-all duration-300"
+          >
+            <MessageSquare className="w-6 h-6 text-white" />
+          </Link>
         </div>
       </nav>
     </>
