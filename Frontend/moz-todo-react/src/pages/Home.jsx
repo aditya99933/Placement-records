@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Briefcase, Users, GraduationCap, TrendingUp, Building, MapPin, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, GraduationCap, TrendingUp, Building, MapPin, ArrowRight,MessageSquare } from 'lucide-react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -139,31 +139,34 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="px-4 py-16 z-10 relative">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <section className="px-6 py-16 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
             What We <span className="text-green-500">Offer</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Job Portal */}
+            <div className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition h-full flex flex-col">
               <div className="flex items-center mb-4">
                 <Briefcase className="w-8 h-8 text-green-500 mr-3" />
                 <h3 className="text-xl font-semibold">Job Portal</h3>
               </div>
-              <p className="text-gray-300 mb-4">
-                Discover latest job opportunities from top companies. Apply directly and track your applications.
+              <p className="text-gray-300 mb-4 flex-grow">
+                Discover latest job opportunities from top companies. Apply directly and track applications.
               </p>
               <Link to="/jobs" className="text-green-500 hover:text-green-400 font-medium">
                 Browse Jobs →
               </Link>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition">
+            {/* Placement Stats */}
+            <div className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition h-full flex flex-col">
               <div className="flex items-center mb-4">
                 <TrendingUp className="w-8 h-8 text-blue-500 mr-3" />
                 <h3 className="text-xl font-semibold">Placement Stats</h3>
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 flex-grow">
                 Explore detailed placement statistics, company-wise data, and salary trends across batches.
               </p>
               <Link to="/placement" className="text-blue-500 hover:text-blue-400 font-medium">
@@ -171,21 +174,37 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="bg-gray-900 rounded-lg p-6 hover:bg-gray-800 transition">
+            {/* Campus Jobs */}
+            <div className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition h-full flex flex-col">
               <div className="flex items-center mb-4">
                 <GraduationCap className="w-8 h-8 text-purple-500 mr-3" />
                 <h3 className="text-xl font-semibold">Campus Jobs</h3>
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4 flex-grow">
                 Access exclusive campus placement opportunities and recruitment drives for students.
               </p>
               <Link to="/campus" className="text-purple-500 hover:text-purple-400 font-medium">
                 Explore Campus →
               </Link>
             </div>
+
+            {/* AI Learning Chatbot */}
+            <div className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition h-full flex flex-col">
+              <div className="flex items-center mb-4">
+                <MessageSquare className="w-8 h-8 text-green-500 mr-3" />
+                <h3 className="text-xl font-semibold">AI Learning Chatbot</h3>
+              </div>
+              <p className="text-gray-300 mb-4 flex-grow">
+                Get personalized learning paths, YouTube tutorials, and curated resources for any tech domain.
+              </p>
+              <Link to="/ai" className="text-green-500 hover:text-green-400 font-medium">
+                Start Learning →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Stats Section */}
       <section className="px-4 py-16 bg-gray-900 z-10 relative rounded-lg max-w-7xl mx-auto mt-16 shadow-lg border border-[#232b36]">
