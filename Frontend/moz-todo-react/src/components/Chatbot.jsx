@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Toast from "../components/Toast";
 import { useState } from "react";
 import axios from "axios";
 
@@ -10,6 +11,7 @@ const Chatbot = ({ onAuthSuccess }) => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState(null);
 
     const apiBase = "https://placement-records.onrender.com/api/users"; 
     const handleSubmit = async (e) => {
@@ -23,7 +25,7 @@ const Chatbot = ({ onAuthSuccess }) => {
             onAuthSuccess(res.data.token);
             localStorage.setItem('token', res.data.token); 
         } else {
-            alert("Signup successful! Ab login karein.");
+            setToast({ message: "Signup successful! Ab login karein.", type: "success" });
             setIsLogin(true);
         }
         } catch (err) {
@@ -34,6 +36,15 @@ const Chatbot = ({ onAuthSuccess }) => {
   return (
     <>
       <Navbar />
+      
+      {/* Toast Notification */}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
       <div className="min-h-screen bg-black text-white pb-20 md:pb-0">
         <div className="max-w-md mx-auto px-4 py-8">
           <div className="bg-gray-900 rounded-2xl p-6 shadow-lg">
@@ -93,3 +104,4 @@ const Chatbot = ({ onAuthSuccess }) => {
 }
 
 export default Chatbot
+
