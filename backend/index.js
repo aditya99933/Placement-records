@@ -18,7 +18,7 @@ const app = express();
 const allowedOrigins = [
   "https://placement-records.vercel.app",
   "http://localhost:5173",
-  "https://www.adgipshub.live" // ← only if needed
+  "https://www.adgipshub.online/" 
 ];
 
 app.use(cors({
