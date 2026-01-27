@@ -37,7 +37,7 @@ const Notes = () => {
   const handleDelete = async (noteId) => {
     if (window.confirm('Are you sure you want to delete this note?')) {
       try {
-        await axios.delete(`https://placement-records.onrender.com/notes/${noteId}`);
+        await axios.delete(`https://placement-records.onrender.com/api/notes/${noteId}`);
         setNotes(notes.filter(note => note._id !== noteId));
         showToast('Note deleted successfully!', 'success');
       } catch (error) {
@@ -47,14 +47,24 @@ const Notes = () => {
     }
   };
 
-  const handleDownload = (pdfUrl, title) => {
-    const link = document.createElement('a');
-    link.href = `https://placement-records.onrender.com${pdfUrl}`;
-    link.download = `${title}.pdf`;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async (pdfUrl, title) => {
+    try {
+      const filename = pdfUrl.split('/').pop();
+      const response = await axios.get(`https://placement-records.onrender.com/api/notes/download/${filename}`, {
+        responseType: 'blob'
+      });
+      
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${title}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      showToast('Failed to download file', 'error');
+    }
   };
 
   return (
