@@ -49,12 +49,11 @@ const Notes = () => {
 
   const handleDownload = async (pdfUrl, title) => {
     try {
-      const filename = pdfUrl.split('/').pop();
-      const response = await axios.get(`https://placement-records.onrender.com/api/notes/download/${filename}`, {
+      const response = await axios.get(pdfUrl, {
         responseType: 'blob'
       });
       
-      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
       const link = document.createElement('a');
       link.href = url;
       link.download = `${title}.pdf`;
@@ -63,6 +62,7 @@ const Notes = () => {
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     } catch (error) {
+      console.error('Download error:', error);
       showToast('Failed to download file', 'error');
     }
   };

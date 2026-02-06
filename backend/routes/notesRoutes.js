@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
 const protect = require('../middlewares/authMiddleware');
-const { createNote, getAllNotes, getNoteById, deleteNote, downloadNote } = require('../controllers/notecontroller');
+const { createNote, getAllNotes, getNoteById, deleteNote } = require('../controllers/notecontroller');
 const { upload } = require('../middlewares/noteMiddleware');
 const router = express.Router();
 
 router.post('/',protect,upload.single('pdf'), createNote);
 router.get('/', getAllNotes);
-router.get('/download/:filename', downloadNote);
 router.get('/:id', getNoteById);
 router.delete('/:id', deleteNote);
 

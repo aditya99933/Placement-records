@@ -3,8 +3,6 @@ dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const https = require("https");
-const path = require("path");
 
 
 const userRoutes = require("./routes/userRoute.js");
@@ -37,9 +35,6 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Serve static files from uploads directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/auth", authRoutes);
@@ -60,11 +55,3 @@ mongoose
     app.listen(PORT, () => console.log(`Server running on ${PORT}`));
   })
   .catch((err) => console.error(err));
-
-const URL = "https://placement-records.onrender.com";
-
-setInterval(() => {
-  https.get(URL).on("error", (err) => {
-    console.error("Keep-alive ping failed:", err.message);
-  });
-}, 14 * 60 * 1000); 

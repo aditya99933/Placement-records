@@ -1,19 +1,25 @@
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('cloudinary').v2;
 
-// Create uploads directory if it doesn't exist
-if (!fs.existsSync('uploads/')) {
-    fs.mkdirSync('uploads/');
-}
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/');
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'notes',
+    resource_type: 'raw',
+    allowed_formats: ['pdf'],
+    public_id: (req, file) => {
+      const timestamp = Date.now();
+      return `pdf-${timestamp}`;
     },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
+    format: 'pdf'
+  }
 });
 
 exports.upload = multer({ storage: storage });
