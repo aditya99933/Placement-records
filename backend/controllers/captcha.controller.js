@@ -1,11 +1,11 @@
-const puppeteer = require('puppeteer-core');
+const puppeteer = require("puppeteer"); // ✅ CHANGE
+
 const { captchaSessions } = require('../utils/sessionStore.js');
 
 const initCaptchaController = async (req, res) => {
   try {
     const browser = await puppeteer.launch({
-      executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-      headless: "new", // ✅ background only
+      headless: true, // ✅ simple use
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
@@ -30,18 +30,19 @@ const initCaptchaController = async (req, res) => {
       createdAt: Date.now(),
     });
 
-    // ✅ KEY NAME FIXED
     res.json({
       success: true,
       sessionId,
-      captchaImage: captchaBase64, // 👈 ONLY base64
+      captchaImage: captchaBase64,
     });
 
   } catch (error) {
+    console.error("ERROR:", error); // 🔥 important for logs
     res.status(500).json({
       success: false,
       message: error.message,
     });
   }
 };
+
 module.exports = { initCaptchaController };
