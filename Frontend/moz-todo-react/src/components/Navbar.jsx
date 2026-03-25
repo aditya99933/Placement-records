@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Home, Briefcase, Users, GraduationCap, UserCheck, LogOut,BookOpen, MessageSquare } from 'lucide-react';
+import { Home, Briefcase, Users, FileText, UserCheck, LogOut,BookOpen, MessageSquare } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -38,7 +38,7 @@ const Navbar = () => {
           <div className="flex-1 flex justify-center gap-6">
             <Link to="/" className={`px-3 py-1 rounded transition ${pathname === '/' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Home</Link>
             <Link to="/placement" className={`px-3 py-1 rounded transition ${pathname === '/placement' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Placement</Link>
-            <Link to="/campus" className={`px-3 py-1 rounded transition ${pathname === '/campus' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Campus</Link>
+            <Link to="/result" className={`px-3 py-1 rounded transition ${pathname === '/result' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>GGSIPU Result</Link>
             <Link to="/jobs" className={`px-3 py-1 rounded transition ${pathname === '/jobs' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Jobs</Link>
             <Link to="/notes" className={`px-3 py-1 rounded transition ${pathname === '/notes' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Notes</Link>
             <Link to="/ai" className={`px-3 py-1 rounded transition ${pathname === '/ai' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Chatbot</Link>
@@ -90,15 +90,14 @@ const Navbar = () => {
           </Link>
           
           <Link 
-            to="/campus" 
+            to="/result" 
             className={`flex flex-col items-center p-2 rounded transition ${
-              pathname === '/campus' ? 'text-green-500' : 'text-gray-400 hover:text-green-500'
+              pathname === '/result' ? 'text-green-500' : 'text-gray-400 hover:text-green-500'
             }`}
           >
-            <GraduationCap className="w-5 h-5" />
-            <span className="text-xs mt-1">Campus</span>
+            <FileText className="w-5 h-5" />
+            <span className="text-xs mt-1">Result</span>
           </Link>
-          
           <Link 
             to="/jobs" 
             className={`flex flex-col items-center p-2 rounded transition ${

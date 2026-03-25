@@ -1,0 +1,2058 @@
+[
+  {
+    "subjectName": "PROGRAMMING FOR PROBLEM SOLVING",
+    "credits": 3
+  },
+  {
+    "subjectName": "ELECTRICAL SCIENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING MECHANICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMMUNICATION SKILLS-I",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING CHEMISTRY- I",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING MATHEMATICS -I",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENGINEERING PHYSICS - I",
+    "credits": 3
+  },
+  {
+    "subjectName": "INDIAN CONSTITUTION",
+    "credits": 2
+  },
+  {
+    "subjectName": "PROGRAMMING FOR PROBLEM SOLVING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING GRAPHICS - I",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRICAL SCIENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING CHEMISTRY -I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING PHYSICS -I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMMUNICATION SKILLS - II",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING CHEMISTRY - II",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING MATHEMATICS - II",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENGINEERING PHYSICS - II",
+    "credits": 3
+  },
+  {
+    "subjectName": "PROBABILITY AND STATISTICS FOR ENGINEERS",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL STUDIES",
+    "credits": 3
+  },
+  {
+    "subjectName": "HUMAN VALUES AND ETHICS",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO MANUFACTURING PROCESS",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING GRAPHICS - II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING CHEMISTRY - II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING PHYSICS - II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROGRAMMING IN PYTHON",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE AND MATERIALS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BASIC ELECTRONICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ROBOTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING ECONOMICS",
+    "credits": 2
+  },
+  {
+    "subjectName": "KINEMATICS AND DYNAMICS OF MACHINES",
+    "credits": 4
+  },
+  {
+    "subjectName": "SWITCHING THEORY AND LOGIC DESIGN",
+    "credits": 4
+  },
+  {
+    "subjectName": "ANALOG ELECTRONICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "MECHANICS OF MATERIAL",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO ROBOTICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "LINEAR AND ABSTRACT ALGEBRA",
+    "credits": 3
+  },
+  {
+    "subjectName": "OOPS AND DATA SRUCTURES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE DRAWING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MECHATRONICS AND IOT LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ACCOUNTANCY FOR ENGINEERS",
+    "credits": 2
+  },
+  {
+    "subjectName": "CONVEX OPTIMIZATION",
+    "credits": 3
+  },
+  {
+    "subjectName": "OOPS AND DATA STRUCTURES",
+    "credits": 3
+  },
+  {
+    "subjectName": "CONTROL THEORY AND ROBOT CONTROL SYSTEMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF AUTOMATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "MACHATRONICS SYSTEMS AND APPLICATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "INTERNET OF THINGS",
+    "credits": 4
+  },
+  {
+    "subjectName": "SOFTWARE ENGINEERING",
+    "credits": 3
+  },
+  {
+    "subjectName": "NSS / NCC / CULTURAL CLUBS / TECHNICAL SOCIETY / TECHNICALLNICAL CLUB",
+    "credits": 2
+  },
+  {
+    "subjectName": "SUMMER TRAINING REPORT",
+    "credits": 1
+  },
+  {
+    "subjectName": "CAD AND SIMULATION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COBOTICS AND FACTORY AUTOMATION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THERMAL SCIENCE",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADVANCED MANUFACTURING PROCESSES",
+    "credits": 4
+  },
+  {
+    "subjectName": "ROBOTIC COMPONENT DESIGN AND SIMULATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "COBOTICS AND FACTORY AUTOMATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENTREPRENEURSHIP MINDSET",
+    "credits": 2
+  },
+  {
+    "subjectName": "ELEMENTS OF INDIAN HISTORY FOR ENGINEERS",
+    "credits": 2
+  },
+  {
+    "subjectName": "TECHNICAL WRITING",
+    "credits": 2
+  },
+  {
+    "subjectName": "AUTOMOTIVE TECHNOLOGY AND GREEN VEHICLES",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADVANCED ROBOTICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPUTER-INTEGRATED MANUFACTURING (CIM) LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTER-INTEGRATED MANUFACTURING (CIM)",
+    "credits": 4
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "AUTOMOTIVE TECHNOLOGY AND GREEN VEHICLES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ADVANCED ROBOTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INDUSTRY 4.0",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATABASE MANAGEMENT SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO SMART MATERIALS",
+    "credits": 3
+  },
+  {
+    "subjectName": "PERSONAL FINANCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "MINOR PROJECT",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADDITIVE MANUFACTURING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "TOTALLY INTEGRATED AUTOMATION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "GREEN LOGISTICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "FLUID SYSTEMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADDITIVE MANUFACTURING",
+    "credits": 4
+  },
+  {
+    "subjectName": "TOTALLY INTEGRATED AUTOMATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "MAJOR PROJECT- DISSERTATION",
+    "credits": 23
+  },
+  {
+    "subjectName": "PROGRAMMING IN 'C'",
+    "credits": 3
+  },
+  {
+    "subjectName": "APPLIED PHYSICS - I",
+    "credits": 3
+  },
+  {
+    "subjectName": "APPLIED MATHEMATICS - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMMUNICATIONS SKILLS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MANUFACTURING PROCESS",
+    "credits": 4
+  },
+  {
+    "subjectName": "PHYSICS - I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROGRAMMING IN 'C' LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ENGINEERING GRAPHICS-I",
+    "credits": 2
+  },
+  {
+    "subjectName": "ENVIRONMENTAL STUDIES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "WORKSHOP PRACTICE",
+    "credits": 2
+  },
+  {
+    "subjectName": "ENGINEERING GRAPHICS - II",
+    "credits": 1
+  },
+  {
+    "subjectName": "APPLIED CHEMISTRY",
+    "credits": 3
+  },
+  {
+    "subjectName": "PHYSICS-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "APPLIED MATHEMATICS -II",
+    "credits": 4
+  },
+  {
+    "subjectName": "APPLIED PHYSICS - II",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB PROGRAMMING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PRINCIPLES OF ARTIFICIAL INTELLIGENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DIGITAL LOGIC DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "FOUNDATIONS OF DATA SCIENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA STRUCTURES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SELECTED READING",
+    "credits": 1
+  },
+  {
+    "subjectName": "CRITICAL REASONING AND SYSTEMS THINKING",
+    "credits": 2
+  },
+  {
+    "subjectName": "UNIVERSAL HUMAN VALUES - II",
+    "credits": 3
+  },
+  {
+    "subjectName": "PROBABILITY, STATISTICS AND LINEAR ALGEBRA",
+    "credits": 4
+  },
+  {
+    "subjectName": "PRINCIPLES OF ARTIFICIAL INTELLIGENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "DIGITAL LOGIC DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "FOUNDATIONS OF DATA SCIENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA STRUCTURES",
+    "credits": 3
+  },
+  {
+    "subjectName": "PRACTICUM (INTEGERATED PROJECT)",
+    "credits": 1
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF MACHINE LERNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTER NETWORKS AND INTERNET PROTOCOL LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATABASE MANAGEMENT SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "OBJECT ORIENTED PROGRAMMING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EMERGING TRENDS IN TECHNOLOGICAL INDUSTRIES",
+    "credits": 1
+  },
+  {
+    "subjectName": "EFFECTIVE TECHNICAL WRITING",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTATIONAL METHODS",
+    "credits": 3
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF MACHINE LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTER NETWORKS AND INTERNET PROTOCOL",
+    "credits": 3
+  },
+  {
+    "subjectName": "OBJECT ORIENTED PROGRAMMING",
+    "credits": 3
+  },
+  {
+    "subjectName": "SEMINAR ON CASE STUDY OF EMERGING AREAS OF TECHNOLOGY",
+    "credits": 1
+  },
+  {
+    "subjectName": "SUMMER TRAINING REPORT-1",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO INTERNET OF THINGS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA MINING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DESIGN AND ANALYSIS OF ALGORITHMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "OPERATING SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PRINCIPLES OF ENTREPRENEURSHIP MINDSET",
+    "credits": 2
+  },
+  {
+    "subjectName": "INTRODUCTION TO INTERNET OF THINGS",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTER ORGANIZATION AND ARCHITECTURE",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA MINING",
+    "credits": 4
+  },
+  {
+    "subjectName": "DESIGN AND ANALYSIS OF ALGORITHMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "OPERATING SYSTEMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "DIGITAL IMAGE PROCESSING",
+    "credits": 3
+  },
+  {
+    "subjectName": "BLOCKCHAIN TECHNOLOGY LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BLOCKCHAIN TECHNOLOGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF DEEP LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF DEEP LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "BIG DATA ANALYTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BIG DATA ANALYTICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "CLOUD COMPUTING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "CLOUD COMPUTING",
+    "credits": 3
+  },
+  {
+    "subjectName": "COGNITIVE COMPUTING",
+    "credits": 4
+  },
+  {
+    "subjectName": "NSS/ NCC/ CULTURAL CLUBS/ TECHNICAL SOCIETY/ TECHNICAL CLUB",
+    "credits": 2
+  },
+  {
+    "subjectName": "DIGITAL IMAGE PROCESSING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PRINCIPLES OF MANAGEMENT FOR ENGINEERS",
+    "credits": 2
+  },
+  {
+    "subjectName": "COMPUTER VISION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTER VISION",
+    "credits": 3
+  },
+  {
+    "subjectName": "METAVERSE AND ITS APPLICATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "BUSINESS INTELLIGENCE & ANALYTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BUSINESS INTELLIGENCE & ANALYTICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCES IN DATA SCIENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ADVANCES IN DATA SCIENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "AUDIO AND SPEECH PROCESSING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "AUDIO AND SPEECH PROCESSING",
+    "credits": 3
+  },
+  {
+    "subjectName": "SUMMER TRAINING REPORT-2",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTERNSHIP REPORT AND VIVA VOCE",
+    "credits": 18
+  },
+  {
+    "subjectName": "INTERNSHIP PROGRESS EVALUATION",
+    "credits": 2
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATA MINING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATA MINING",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCES IN DEEP LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ADVANCES IN DEEP LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "CRYPTOGRAPHY AND NETWORK SECURITY",
+    "credits": 4
+  },
+  {
+    "subjectName": "NATURAL LANGUAGE PROCESSING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "NATURAL LANGUAGE PROCESSING",
+    "credits": 3
+  },
+  {
+    "subjectName": "SOFTWARE VERIFICATION, VALIDATION AND TESTING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SOFTWARE VERIFICATION, VALIDATION AND TESTING",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB INTELLIGENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "WEB INTELLIGENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "PREDICTIVE BUSINESS ANALYSIS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PREDICTIVE BUSINESS ANALYSIS",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTELLIGENT AND EXPERT SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTELLIGENT AND EXPERT SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCES IN MACHINE LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ADVANCES IN MACHINE LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "INDUSTRIAL CHEMISTRY",
+    "credits": 3
+  },
+  {
+    "subjectName": "FLUID MECHANICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MECHANICAL OPERATION LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "MATERIAL SCIENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENGINEERING THERMODYNAMICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "TRANSPORT PHENOMENA",
+    "credits": 4
+  },
+  {
+    "subjectName": "MECHANICAL OPERATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "FLUID MECHANICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "PROCES CACULATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "MICROBIOLOGY LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "INSTRUMENTATION & PROCESS CONTROL LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "CHEMICAL REACTION ENG. LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "BIOCHEMISTRY",
+    "credits": 4
+  },
+  {
+    "subjectName": "MICROBIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "INSTRUMENTATION AND PROCESS CONTROL",
+    "credits": 3
+  },
+  {
+    "subjectName": "HEAT TRANSFER",
+    "credits": 4
+  },
+  {
+    "subjectName": "CHEMICAL REACTION ENGINEERING I",
+    "credits": 4
+  },
+  {
+    "subjectName": "MASS TRANSFER I",
+    "credits": 4
+  },
+  {
+    "subjectName": "BIOCHEMISTRY AND MOLECULAR BIOLOGY LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "HEAT AND MASS TRANSFER LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "SUMMER TRAINING / SUMMER PROJECT",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROTEIN SCIENCE AND ENGINEERING",
+    "credits": 3
+  },
+  {
+    "subjectName": "BIOREACTION ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "WATER POLLUTION AND ABATEMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "MOLECULAR BIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "MASS TRANSFER II",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL IMPACT ASSESSMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "INDUSTRIAL MICROBIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF POLYMER ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "FERMENTATION TECHNOLOGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTATIONAL METHODS FOR BIOCHEMICAL ENGINEERS",
+    "credits": 3
+  },
+  {
+    "subjectName": "BIOPROCESS EQUIPMENT DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTATIONAL LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MODELLING & SIMULATION LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "ENVIRONMENT LAB",
+    "credits": 4
+  },
+  {
+    "subjectName": "SUMMER TRAINING VIVA",
+    "credits": 2
+  },
+  {
+    "subjectName": "BIOCHEMICAL PROCESSES",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENZYME ENGINEERING & TECHNOLOGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "HYDROGEN ENERGY: PRODUCTION, TRANSPORTATION, STORAGE AND SAFETY",
+    "credits": 4
+  },
+  {
+    "subjectName": "AIR POLLUTION CONTROL ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "INDUSTRIAL POLLUTION AND WASTE MANAGEMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "PROCESS ENGINEERING & ECONOMICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MAJOR PROJECT/INTERNSHIP",
+    "credits": 12
+  },
+  {
+    "subjectName": "INTRODUCTION TO BIOTECHNOLOGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "NCC/NSS/YFE AND OTHER ACTIVITIES",
+    "credits": 2
+  },
+  {
+    "subjectName": "INTRODUCTION TO MATERIAL AND ENERGY BALANCE",
+    "credits": 4
+  },
+  {
+    "subjectName": "GENETICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "CELL BIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "FUNDAMENTALS OF HEAT AND MASS TRANSFER",
+    "credits": 4
+  },
+  {
+    "subjectName": "TECHNIQUES IN BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENZYME TECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "IMMUNOLOGY AND IMMUNOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "PRECISION MEDICINE AND WELLNESS",
+    "credits": 4
+  },
+  {
+    "subjectName": "NANOBIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "UNIT OPERATIONS AND PLANT DESIGN FOR BIOMANUFACTURING",
+    "credits": 4
+  },
+  {
+    "subjectName": "PLANT BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "RECOMBINANT DNA TECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "ANIMAL BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENTREPRENEURIAL MINDSET",
+    "credits": 2
+  },
+  {
+    "subjectName": "BIOINFORMATICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "INTELLECTUAL PROPERTY RIGHTS, BIOSAFETY AND BIOETHICS IN BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "DOWNSTREAM PROCESSING",
+    "credits": 4
+  },
+  {
+    "subjectName": "BIOPROCESS ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "FOOD AND NUTRITION TECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "PLANT SECONDARY METABOLITES AND THEIR APPLICATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPUTATIONAL BIOLOGY-LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "GENOME ENGINEERING AND EDITING",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL BIOTECHNOLOGY-LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "PROTEIN BIOTECHNOLOGY-LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "PLANT STRESS BIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPUTATIONAL BIOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "PROTEIN BIOTECHNOLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "JOURNAL CLUB/SEMINAR",
+    "credits": 2
+  },
+  {
+    "subjectName": "PROJECT WORK",
+    "credits": 12
+  },
+  {
+    "subjectName": "GEOMATICS ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "CIVIL ENGINEERING DRAWING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTATIONAL METHODS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "GEOMATICS ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "STRUCTURAL DESIGN - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "STRUCTURAL ANALYSIS - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "INDIAN KNOWLEDGE SYSTEM",
+    "credits": 2
+  },
+  {
+    "subjectName": "TRANSPORTATION ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "HYDRAULICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SOIL MECHANICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROBABILITY, STATISTICS AND LINEAR PROGRAMMING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "TRANSPORTATION ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL ENGINEERING - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "HYDRAULICS AND HYDROLOGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "SOIL MECHANICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "PROBABILITY, STATISTICS AND LINEAR PROGRAMMING",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "GEOTECHNICAL ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BUILDING MATERIAL AND CONCRETE TESTING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "STRUCTURAL DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "TRAFFIC ENGINEERING AND PAVEMENT DESIGN",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENVIRONMENTAL ENGINEERING-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "GEOTECHNICAL ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "STRUCTURAL DESIGN-II",
+    "credits": 3
+  },
+  {
+    "subjectName": "STRUCTURAL ANALYSIS-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "ECONOMICS FOR ENGINEERS",
+    "credits": 2
+  },
+  {
+    "subjectName": "UNIVERSAL HUMAN VALUES",
+    "credits": 1
+  },
+  {
+    "subjectName": "IRRIGATION ENGINEERING AND DESIGN OF HYDRAULIC STRUCTURES",
+    "credits": 4
+  },
+  {
+    "subjectName": "CONTRACT MANAGEMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADVANCED CONSTRUCTION MATERIALS AND PRACTICES",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADVANCED STRUCTURAL DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCED STRUCTURAL DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "NON DESTRUCTIVE EVALUATION OF STRUCTURES",
+    "credits": 3
+  },
+  {
+    "subjectName": "NON DESTRUCTIVE EVALUATION OF STRUCTURES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ARC GIS AND REMOTE SENSING",
+    "credits": 3
+  },
+  {
+    "subjectName": "ARC GIS AND REMOTE SENSING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ADVANCED SURVEYING",
+    "credits": 3
+  },
+  {
+    "subjectName": "QUALITY AND SAFETY MANAGEMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "ADVANCED SURVEYING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "LEAN CONSTRUCTION TECHNOLOGY AND MANAGEMENT",
+    "credits": 4
+  },
+  {
+    "subjectName": "RECENT CONSTRUCTION TECHNOLOGIES",
+    "credits": 4
+  },
+  {
+    "subjectName": "MAJOR PROJECT-DISSERTATION AND VIVA VOCE",
+    "credits": 18
+  },
+  {
+    "subjectName": "PROJECT PROGRESS EVALUATION",
+    "credits": 2
+  },
+  {
+    "subjectName": "INDIAN KNOWLEDGE SYTEM",
+    "credits": 2
+  },
+  {
+    "subjectName": "DISCRETE MATHEMATICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "DIGITAL LOGIC AND COMPUTER DESIGN",
+    "credits": 4
+  },
+  {
+    "subjectName": "OBJECT-ORIENTED PROGRAMMING USING C++",
+    "credits": 4
+  },
+  {
+    "subjectName": "DIGITAL LOGIC AND COMPUTER DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA STURCTURES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "OBJECT-ORIENTED PROGRAMMING USING C ++ LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THEORY OF COMPUTATION",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPUTER NETWORKS",
+    "credits": 4
+  },
+  {
+    "subjectName": "FUNCTIONAL AND LOGIC PROGRAMMING",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPUTER NETWORKS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "FUNCTIONAL AND LOGIC PROGRAMMING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "APPLIED PHYSICS-II",
+    "credits": 3
+  },
+  {
+    "subjectName": "APPLIED MATHEMATICS-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "ENGINEERING GRAPHICS-II",
+    "credits": 1
+  },
+  {
+    "subjectName": "OBJECT-ORIENTED PROGRAMMING USING C++ LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTATONAL METHODS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROGRAMMING IN JAVA LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "CIRCUITS AND SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROGRAMMING IN JAVA",
+    "credits": 4
+  },
+  {
+    "subjectName": "CIRCUITS AND SYSTEMS",
+    "credits": 4
+  },
+  {
+    "subjectName": "DESIGN AND ANALYSIS OF ALGORITHM LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SOFTWARE ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPILER DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DESIGN AND ANALYSIS OF ALGORITHM",
+    "credits": 4
+  },
+  {
+    "subjectName": "COMPILER DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "ARTIFICIAL INTELLIGENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ARTIFICIAL INTELLIGENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "STATISTICS, STATISTICAL MODELLING & DATA ANALYTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "STATISTICS, STATISTICAL MODELLING & DATA ANALYTICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCED JAVA PROGRAMMING",
+    "credits": 3
+  },
+  {
+    "subjectName": "ADVANCED JAVA PROGRAMMING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PROGRAMMING IN PYTHON LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "WEB TECHNOLOGIES",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB TECHNOLOGIES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "REINFORCEMENT LEARNING AND DEEP LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "REINFORCEMENT LEARNING AND DEEP LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "PATTERN RECOGNITION AND COMPUTER VISION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PATTERN RECOGNITION AND COMPUTER VISION",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA WAREHOUSING AND DATA MINING",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA WAREHOUSING AND DATA MINING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMMUNICATION SKILLS",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA SCIENCE LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA SCIENCE",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTERNSHIIP PROGRESS EVALUATION",
+    "credits": 2
+  },
+  {
+    "subjectName": "CHEMICAL REACTION ENGINEERING LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "PROCESS INDUSTRIES",
+    "credits": 4
+  },
+  {
+    "subjectName": "CHEMICAL PROCESS CONTROL I",
+    "credits": 4
+  },
+  {
+    "subjectName": "CHEMICAL ENGINEERING THERMODYNAMICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "HEAT TRANSFER I",
+    "credits": 4
+  },
+  {
+    "subjectName": "MASS TRANSFER LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "HEAT TRANSFER LAB",
+    "credits": 2
+  },
+  {
+    "subjectName": "SUMMAR TRAINING/SUMMER PROJECT",
+    "credits": 1
+  },
+  {
+    "subjectName": "CHEMICAL REACTION ENGINEERING II",
+    "credits": 4
+  },
+  {
+    "subjectName": "CHEMICAL PROCESS CONTROL II",
+    "credits": 3
+  },
+  {
+    "subjectName": "HEAT TRANSFER II",
+    "credits": 4
+  },
+  {
+    "subjectName": "INTRODUCTION TO PETROLEUM REFINING & PETROCHEMICALS",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTATIONAL METHODS FOR ENGINEERS",
+    "credits": 4
+  },
+  {
+    "subjectName": "PROCESS EQUIPMENT DESIGN I",
+    "credits": 2
+  },
+  {
+    "subjectName": "ENERGY AND WATER AUDIT FOR INDUSTRIES",
+    "credits": 4
+  },
+  {
+    "subjectName": "NSS/NCC/CULTURAL CLUBS/TECHNICAL SOCIETY/TECHNICAL CLUB",
+    "credits": 2
+  },
+  {
+    "subjectName": "SEMINAR",
+    "credits": 2
+  },
+  {
+    "subjectName": "PROCESS EQUIPMENT DESIGN II",
+    "credits": 2
+  },
+  {
+    "subjectName": "CHEMICAL PROCESS SAFETY",
+    "credits": 4
+  },
+  {
+    "subjectName": "SIGNAL AND SYSTEM LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ANALOG ELECTRONICS-I",
+    "credits": 4
+  },
+  {
+    "subjectName": "ANALOG COMMUNICATIONS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ANALOG COMMUNICATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "SIGNAL AND SYSTEM",
+    "credits": 3
+  },
+  {
+    "subjectName": "NETWORK ANALYSIS AND SYNTHESIS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ANALOG ELECTRONICS-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DIGITAL COMMUNICATIONS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MICROPROCESSORS AND MICROCONTROLLERS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTROMAGNETIC FIELD THEORY",
+    "credits": 3
+  },
+  {
+    "subjectName": "ANALOG ELECTRONICS-II",
+    "credits": 3
+  },
+  {
+    "subjectName": "DIGITAL COMMUNICATIONS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MICROPROCESSORS AND MICROCONTROLLERS",
+    "credits": 3
+  },
+  {
+    "subjectName": "NETWORK ANALYSIS AND SYNTHESIS",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATA COMMUNICATION AND NETWORKING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "TRANSMISSION LINES, WAVEGUIDES AND ANTENNA DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO CONTROL SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MICROELECTRONICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DIGITAL SIGNAL PROCESSING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA COMMUNICATION AND NETWORKING",
+    "credits": 4
+  },
+  {
+    "subjectName": "TRANSMISSION LINES, WAVEGUIDES AND ANTENNA DESIGN",
+    "credits": 4
+  },
+  {
+    "subjectName": "INTRODUCTION TO CONTROL SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MICROELECTRONICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "DIGITAL SIGNAL PROCESSING",
+    "credits": 4
+  },
+  {
+    "subjectName": "DATA STRUCTURES AND ALGORITHMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "DATA STRUCTURES AND ALGORITHMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MOBILE COMPUTING",
+    "credits": 3
+  },
+  {
+    "subjectName": "MOBILE COMPUTING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "OPTICAL COMMUNICATION SYSTEMS AND NETWORK",
+    "credits": 3
+  },
+  {
+    "subjectName": "OPTICAL COMMUNICATION SYSTEMS AND NETWORKS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEM ARCHITECTURE AND DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEM ARCHITECTURE AND DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "FUZZY LOGIC AND NEURAL NETWORKS",
+    "credits": 3
+  },
+  {
+    "subjectName": "FUZZY LOGIC AND NEURAL NETWORKS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SUPERVISED AND DEEP LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SUPERVISED AND DEEP LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "UNSUPERVISED LEARNING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "UNSUPERVISED LEARNING",
+    "credits": 3
+  },
+  {
+    "subjectName": "SIGNALS AND SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "ANALOG ELECTRONICS-I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SIGNALS AND SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRONICS-I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRICAL ENGINEERING WORKSHOP",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRICAL MACHINES-I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRONICS-I",
+    "credits": 3
+  },
+  {
+    "subjectName": "ELECTRICAL MACHINES-I",
+    "credits": 4
+  },
+  {
+    "subjectName": "ELECTRICAL MATERIALS",
+    "credits": 3
+  },
+  {
+    "subjectName": "BRIDGE COURSE IN PROGRAMMING IN C",
+    "credits": 0
+  },
+  {
+    "subjectName": "BRIDGE COURSE IN MATHEMATICS",
+    "credits": 0
+  },
+  {
+    "subjectName": "ELECTRONICS-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "POWER SYSTEMS-I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRICAL MACHINES-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRONICS-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "POWER SYSTEMS-I",
+    "credits": 4
+  },
+  {
+    "subjectName": "ELECTRICAL MACHINES-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "POWER ELECTRONICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRICAL AND ELECTRONICS MEASUREMENTS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "POWER SYSTEMS-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "POWER ELECTRONICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "ELECTRICAL AND ELECTRONICS MEASURING INSTRUMENTS",
+    "credits": 4
+  },
+  {
+    "subjectName": "POWER SYSTEMS-II",
+    "credits": 4
+  },
+  {
+    "subjectName": "ELECTRIC VEHICLE POWERTRAIN AND MOTOR DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRIC VEHICLE POWERTRAIN AND MOTOR DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "BATTERY MANAGEMENT SYSTEMS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "BATTERY MANAGEMENT SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "UTILIZATION OF ELECTRICAL ENERGY LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "UTILIZATION OF ELECTRICAL ENERGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATA COMMUNICATION AND NETWORKING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATA COMMUNICATION AND NETWORKING",
+    "credits": 3
+  },
+  {
+    "subjectName": "ELECTRIC DRIVERS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ELECTRIC DRIVERS",
+    "credits": 3
+  },
+  {
+    "subjectName": "RENEWABLE ENERGY AND POLICIES",
+    "credits": 4
+  },
+  {
+    "subjectName": "EV CHARGING INFRASTRUCTURE TECHNOLOGY LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EV CHARGING INFRASTRUCTURE TECHNOLOGY",
+    "credits": 3
+  },
+  {
+    "subjectName": "ECONOMICS AND POLICIES OF E-MOBILITY",
+    "credits": 4
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS FOR ELECTRIC VEHICLES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS FOR ELECTRIC VEHICLES",
+    "credits": 3
+  },
+  {
+    "subjectName": "ENERGY CONSERVATION SCHEMES",
+    "credits": 4
+  },
+  {
+    "subjectName": "ANALOG AND DIGITAL ELECTRONICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MANUFACTURING SCIENCE AND TECHNOLOGY - I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "STRENGTH OF MATERIALS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THEORY OF MACHINES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ANALOG AND DIGITAL ELECTRONICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "MANUFACTURING SCIENCE AND TECHNOLOGY - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "STRENGTH OF MATERIALS",
+    "credits": 4
+  },
+  {
+    "subjectName": "THEORY OF MACHINES",
+    "credits": 4
+  },
+  {
+    "subjectName": "THERMODYNAMICS AND APPLICATIONS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MANUFACTURING SCIENCE AND TECHNOLOGY - II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THERMODYNAMICS AND APPLICATIONS",
+    "credits": 4
+  },
+  {
+    "subjectName": "MATERIAL SCIENCE AND METALLURGY",
+    "credits": 4
+  },
+  {
+    "subjectName": "MANUFACTURING SCIENCE AND TECHNOLOGY - II",
+    "credits": 4
+  },
+  {
+    "subjectName": "CONTROL SYSTEMS AND APPLICATIONS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SENSORS AND TRANSDUCERS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE DESIGN-I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "CONTROL SYSTEMS AND APPLICATIONS",
+    "credits": 3
+  },
+  {
+    "subjectName": "SENSORS AND TRANSDUCERS",
+    "credits": 4
+  },
+  {
+    "subjectName": "HEAT AND MASS TRANSFER",
+    "credits": 4
+  },
+  {
+    "subjectName": "INDUSTRIAL ENGINEERING",
+    "credits": 4
+  },
+  {
+    "subjectName": "MACHINE DESIGN-I",
+    "credits": 4
+  },
+  {
+    "subjectName": "MACHINE DESIGN- II",
+    "credits": 4
+  },
+  {
+    "subjectName": "FLUID MECHANICS AND HYDRAULIC MACHINES",
+    "credits": 4
+  },
+  {
+    "subjectName": "MECHATRONICS",
+    "credits": 4
+  },
+  {
+    "subjectName": "CAD/CAM",
+    "credits": 4
+  },
+  {
+    "subjectName": "MACHINE DESIGN- II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "NSS/ NCC/ CULTRUAL CLUBS/ TECHNICAL SOCIETY/ TECHNICAL CLUB",
+    "credits": 2
+  },
+  {
+    "subjectName": "FLUID MECHANICS AND HYDRAULIC MACHINES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MECHATRONICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "CAD/CAM LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTER INTEGRATED MANUFACTURING",
+    "credits": 3
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS AND INTERNET OF THINGS",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO METROLOGY AND INSTRUMENTATION",
+    "credits": 3
+  },
+  {
+    "subjectName": "ROBOTICS ENGINEERING",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTER INTEGRATED MANUFACTURING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "EMBEDDED SYSTEMS AND INTERNET OF THINGS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO METROLOGY AND INSTRUMENTATION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "ROBOTICS ENGINEERING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MANUFACTURING SCEINCE AND TECHNOLOGY - I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THERMAL ENGINEERING - I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUATATIONAL METHODS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THERMAL ENGINEERING - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "MANUFACTURING SCEINCE AND TECHNOLOGY - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "MACHINE DESIGN - I LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "THERMAL ENGINEERING - II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE DESIGN - I",
+    "credits": 4
+  },
+  {
+    "subjectName": "THERMAL ENGINEERING - II",
+    "credits": 4
+  },
+  {
+    "subjectName": "METROLOGY AND INSTRUMENTATION LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MACHINE DESIGN-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "METROLOGY AND INSTRUMENTATION",
+    "credits": 3
+  },
+  {
+    "subjectName": "MACHINE DESIGN-II",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO CAD/CAM LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INTRODUCTION TO CAD/CAM",
+    "credits": 3
+  },
+  {
+    "subjectName": "INJECTION MOULDING AND MOULD DESIGN LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INJECTION MOULDING AND MOULD DESIGN",
+    "credits": 3
+  },
+  {
+    "subjectName": "AUTOMOBILE ENGINEERING AND ELECTRIC VEHICLES LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "AUTOMOBILE ENGINEERING AND ELECTRIC VEHICLES",
+    "credits": 3
+  },
+  {
+    "subjectName": "REFRIGERATION AND AIRCONDITIONING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "REFRIGERATION AND AIRCONDITIONING",
+    "credits": 3
+  },
+  {
+    "subjectName": "SYSTEM MODELING, SIMULATION AND ANALYSIS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "SYSTEM MODELING, SIMULATION AND ANALYSIS",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTATIONAL FLUID DYNAMICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTATIONAL FLUID DYNAMICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "COMPUTER AIDED DESIGN AND DRAFTING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "COMPUTER AIDED DESIGN AND DRAFTING",
+    "credits": 3
+  },
+  {
+    "subjectName": "INDUSTRIAL ROBOTICS LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "INDUSTRIAL ROBOTICS",
+    "credits": 3
+  },
+  {
+    "subjectName": "STRENGTH OF MATERIALS-II LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "STRENGTH OF MATERIALS-II",
+    "credits": 3
+  },
+  {
+    "subjectName": "DATABASE MODELLING AND DESIGN",
+    "credits": 4
+  },
+  {
+    "subjectName": "WEB DEVELOPMENT USING MERN STACK LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "WEB DEVELOPMENT USING MERN STACK",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB MINING",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB MINING LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PHP PROGRAMMING AND MYSQL LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "PHP PROGRAMMING AND MYSQL",
+    "credits": 3
+  },
+  {
+    "subjectName": "MOBILE APP DEVELOPMENT LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "MOBILE APP DEVELOPMENT",
+    "credits": 3
+  },
+  {
+    "subjectName": "WEB AND MOBILE APPLICATION TESTING AND DEVELOPMENT LAB",
+    "credits": 1
+  },
+  {
+    "subjectName": "WEB AND MOBILE APPLICATION TESTING AND DEVELOPMENT",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATABASE MANAGEMENT SYSTEMS",
+    "credits": 3
+  },
+  {
+    "subjectName": "INTRODUCTION TO DATABASE MANAGEMENT SYSTEMS LAB",
+    "credits": 1
+  }
+]

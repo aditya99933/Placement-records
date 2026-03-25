@@ -8,7 +8,7 @@ import Charts from "./components/Charts";
 import JobDetailsPage from "./components/JobDetailsPage";
 import AdminLogin from "./components/AdminLogin";
 import JobForm from "./components/JobForm";
-import Campus from "./pages/Campus";
+import Result from "./pages/Result";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Ai from "./pages/Ai";
 import Notes from "./pages/Notes";
@@ -31,7 +31,8 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/placement" element={<Placement />} />
         <Route path="/charts/:batch" element={<Charts />} />
-        <Route path="/campus" element={<Campus />} />
+        <Route path="/campus" element={<Jobs />} />
+        <Route path="/result" element={<Result /> } />
         <Route path="/ai" element={<Ai />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/job-details/:id" element={<JobDetailsPage />} />

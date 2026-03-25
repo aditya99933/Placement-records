@@ -10,6 +10,7 @@ import type { KeyInput } from '../common/USKeyboardLayout.js';
 import { _isElementHandle } from './ElementHandleSymbol.js';
 import type { KeyboardTypeOptions, KeyPressOptions, MouseClickOptions, TouchHandle } from './Input.js';
 import { JSHandle } from './JSHandle.js';
+import type { Locator } from './locators/locators.js';
 import type { QueryOptions, ScreenshotOptions, WaitForSelectorOptions } from './Page.js';
 /**
  * @public
@@ -60,6 +61,14 @@ export interface ClickOptions extends MouseClickOptions {
      * Offset for the clickable point relative to the top-left corner of the border box.
      */
     offset?: Offset;
+    /**
+     * An experimental debugging feature. If true, inserts an element into the
+     * page to highlight the click location for 10 seconds. Might not work on all
+     * pages and does not persist across navigations.
+     *
+     * @experimental
+     */
+    debugHighlight?: boolean;
 }
 /**
  * @public
@@ -95,19 +104,18 @@ export declare function bindIsolatedHandle<This extends ElementHandle<Node>>(tar
  * ```ts
  * import puppeteer from 'puppeteer';
  *
- * (async () => {
- *   const browser = await puppeteer.launch();
- *   const page = await browser.newPage();
- *   await page.goto('https://example.com');
- *   const hrefElement = await page.$('a');
- *   await hrefElement.click();
- *   // ...
- * })();
+ * const browser = await puppeteer.launch();
+ * const page = await browser.newPage();
+ * await page.goto('https://example.com');
+ * const hrefElement = await page.$('a');
+ * await hrefElement.click();
+ * // ...
  * ```
  *
  * ElementHandle prevents the DOM element from being garbage-collected unless the
  * handle is {@link JSHandle.dispose | disposed}. ElementHandles are auto-disposed
- * when their origin frame gets navigated.
+ * when their associated frame is navigated away or the parent
+ * context gets destroyed.
  *
  * ElementHandle instances can be used as arguments in {@link Page.$eval} and
  * {@link Page.evaluate} methods.
@@ -293,9 +301,10 @@ export declare abstract class ElementHandle<ElementType extends Node = Element> 
      *
      * ```ts
      * const feedHandle = await page.$('.feed');
-     * expect(
-     *   await feedHandle.$$eval('.tweet', nodes => nodes.map(n => n.innerText)),
-     * ).toEqual(['Hello!', 'Hi!']);
+     *
+     * const listOfTweets = await feedHandle.$$eval('.tweet', nodes =>
+     *   nodes.map(n => n.innerText),
+     * );
      * ```
      *
      * @param selector -
@@ -332,24 +341,22 @@ export declare abstract class ElementHandle<ElementType extends Node = Element> 
      * ```ts
      * import puppeteer from 'puppeteer';
      *
-     * (async () => {
-     *   const browser = await puppeteer.launch();
-     *   const page = await browser.newPage();
-     *   let currentURL;
-     *   page
-     *     .mainFrame()
-     *     .waitForSelector('img')
-     *     .then(() => console.log('First URL with image: ' + currentURL));
+     * const browser = await puppeteer.launch();
+     * const page = await browser.newPage();
+     * let currentURL;
+     * page
+     *   .mainFrame()
+     *   .waitForSelector('img')
+     *   .then(() => console.log('First URL with image: ' + currentURL));
      *
-     *   for (currentURL of [
-     *     'https://example.com',
-     *     'https://google.com',
-     *     'https://bbc.com',
-     *   ]) {
-     *     await page.goto(currentURL);
-     *   }
-     *   await browser.close();
-     * })();
+     * for (currentURL of [
+     *   'https://example.com',
+     *   'https://google.com',
+     *   'https://bbc.com',
+     * ]) {
+     *   await page.goto(currentURL);
+     * }
+     * await browser.close();
      * ```
      *
      * @param selector - The selector to query and wait for.
@@ -603,6 +610,12 @@ export declare abstract class ElementHandle<ElementType extends Node = Element> 
      * or by calling element.scrollIntoView.
      */
     scrollIntoView(this: ElementHandle<Element>): Promise<void>;
+    /**
+     * Creates a locator based on an ElementHandle. This would not allow
+     * refreshing the element handle if it is stale but it allows re-using other
+     * locator pre-conditions.
+     */
+    asLocator(this: ElementHandle<Element>): Locator<Element>;
     /**
      * If the element is a form input, you can use {@link ElementHandle.autofill}
      * to test if the form is compatible with the browser's autofill
