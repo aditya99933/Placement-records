@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "http://placement-records.onrender.com/api";
 
 export async function initCaptcha() {
   const res = await fetch(`${BASE_URL}/captcha/init`, {
