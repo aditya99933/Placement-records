@@ -18,6 +18,8 @@ const initCaptchaController = async (req, res) => {
     try {
       browser = await puppeteer.launch({
         headless: true, // Render/Linux-friendly
+        executablePath:
+          process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
         args: [
           "--no-sandbox",
           "--disable-setuid-sandbox",

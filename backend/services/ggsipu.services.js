@@ -10,6 +10,8 @@ const logicandFetchHtml = async ({
   password,
   captcha,
 }) => {
+  const url = "https://examweb.ggsipu.ac.in/web/login.jsp";
+  const navTimeoutMs = Number(process.env.CAPTCHA_NAV_TIMEOUT_MS || 30000);
 
   const session = getCaptchaSession(sessionId);
   if (!session) {
@@ -21,6 +23,8 @@ const logicandFetchHtml = async ({
   try {
     browser = await puppeteer.launch({
       headless: true,
+      executablePath:
+        process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -28,13 +32,18 @@ const logicandFetchHtml = async ({
       ],
     });
     const page = await browser.newPage();
-    await page.setDefaultNavigationTimeout(30000);
-    await page.setDefaultTimeout(30000);
+    page.setDefaultNavigationTimeout(navTimeoutMs);
+    page.setDefaultTimeout(navTimeoutMs);
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    );
+    await page.setViewport({ width: 1280, height: 720 });
     if (cookies.length) {
       await page.setCookie(...cookies);
     }
-    await page.goto("https://examweb.ggsipu.ac.in/web/login.jsp", {
-      waitUntil: "domcontentloaded",
+    await page.goto(url, {
+      waitUntil: "load",
+      timeout: navTimeoutMs,
     });
 
     // ===== LOGIN =====
