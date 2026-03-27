@@ -1,5 +1,9 @@
 const captchaSessions = new Map();
-const CAPTCHA_SESSION_TTL_MS = Number(process.env.CAPTCHA_SESSION_TTL_MS || 3 * 60 * 1000);
+// Production note: users often take time to read captcha / type credentials.
+// Default 10 minutes; override via CAPTCHA_SESSION_TTL_MS env.
+const CAPTCHA_SESSION_TTL_MS = Number(
+  process.env.CAPTCHA_SESSION_TTL_MS || 10 * 60 * 1000
+);
 
 const createCaptchaSession = (sessionId, data) => {
   captchaSessions.set(sessionId, {
