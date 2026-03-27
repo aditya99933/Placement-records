@@ -4,6 +4,37 @@ const {
   deleteCaptchaSession,
 } = require("../utils/sessionStore.js");
 
+const getPageDebugInfo = async (page) => {
+  const [title, currentUrl, debugText] = await Promise.all([
+    page.title().catch(() => ""),
+    Promise.resolve(page.url()),
+    page
+      .evaluate(() => {
+        const selectors = [
+          ".error",
+          ".errormsg",
+          ".errorMsg",
+          ".alert",
+          ".alert-danger",
+          "#error",
+          "#message",
+          "font[color='red']",
+          "span[style*='red']",
+        ];
+        for (const sel of selectors) {
+          const el = document.querySelector(sel);
+          if (el && el.textContent && el.textContent.trim()) {
+            return el.textContent.trim();
+          }
+        }
+        return (document.body?.innerText || "").trim().slice(0, 300);
+      })
+      .catch(() => ""),
+  ]);
+
+  return { title, currentUrl, debugText };
+};
+
 const logicandFetchHtml = async ({
   sessionId,
   enrollment,
@@ -63,11 +94,11 @@ const logicandFetchHtml = async ({
 
     // ❗ LOGIN FAILURE CHECK (RIGHT PLACE)
     if (page.url().includes("login.jsp")) {
-      const bodyText = await page.evaluate(() => document.body?.innerText || "");
+      const info = await getPageDebugInfo(page);
       throw new Error(
-        `Login failed (still on login.jsp). Possible invalid credentials/captcha. Page says: ${bodyText
+        `Login failed (still on login.jsp). url=${info.currentUrl} title=${info.title}. Page says: ${info.debugText
           .trim()
-          .slice(0, 200)}`
+          .slice(0, 250)}`
       );
     }
 
@@ -76,12 +107,11 @@ const logicandFetchHtml = async ({
       await page.waitForSelector("#euno", { timeout: navTimeoutMs });
     } catch (e) {
       // Fallback: sometimes the portal changes ids; try broader selectors.
-      const bodyText = await page.evaluate(() => document.body?.innerText || "");
-      const currentUrl = page.url();
+      const info = await getPageDebugInfo(page);
       throw new Error(
-        `Dashboard not loaded (missing #euno). url=${currentUrl}. Page says: ${bodyText
+        `Dashboard not loaded (missing #euno). url=${info.currentUrl} title=${info.title}. Page says: ${info.debugText
           .trim()
-          .slice(0, 200)}`
+          .slice(0, 250)}`
       );
     }
 
