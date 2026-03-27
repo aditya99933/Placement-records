@@ -47,15 +47,13 @@ const initCaptchaController = async (req, res) => {
 
       const captchaBuffer = await captchaEl.screenshot({ encoding: "binary" });
       const captchaBase64 = Buffer.from(captchaBuffer).toString("base64");
-      const cookies = await page.cookies();
-
       const sessionId = `${Date.now()}-${Math.random()
         .toString(36)
         .slice(2, 10)}`;
 
-      createCaptchaSession(sessionId, { cookies });
-
-      await browser.close().catch(() => {});
+      // Keep same browser/page for submit call to avoid captcha mismatch
+      // caused by regenerating captcha on a fresh login page.
+      createCaptchaSession(sessionId, { browser, page });
       browser = null;
 
       return res.json({

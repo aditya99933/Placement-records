@@ -50,32 +50,44 @@ const logicandFetchHtml = async ({
   }
 
   let browser;
+  let page;
+  const hasLivePage = Boolean(session.browser && session.page);
   const { cookies = [] } = session;
   try {
-    browser = await puppeteer.launch({
-      headless: true,
-      executablePath:
-        process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-      ],
-    });
-    const page = await browser.newPage();
+    if (hasLivePage) {
+      browser = session.browser;
+      page = session.page;
+    } else {
+      browser = await puppeteer.launch({
+        headless: true,
+        executablePath:
+          process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
+        args: [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          "--disable-dev-shm-usage",
+        ],
+      });
+      page = await browser.newPage();
+    }
+
     page.setDefaultNavigationTimeout(navTimeoutMs);
     page.setDefaultTimeout(navTimeoutMs);
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     );
     await page.setViewport({ width: 1280, height: 720 });
-    if (cookies.length) {
+
+    if (!hasLivePage && cookies.length) {
       await page.setCookie(...cookies);
     }
-    await page.goto(url, {
-      waitUntil: "load",
-      timeout: navTimeoutMs,
-    });
+
+    if (!hasLivePage) {
+      await page.goto(url, {
+        waitUntil: "load",
+        timeout: navTimeoutMs,
+      });
+    }
 
     // ===== LOGIN =====
     await page.waitForSelector("#username", { timeout: 30000 });

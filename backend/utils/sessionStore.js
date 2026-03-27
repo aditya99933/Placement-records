@@ -12,12 +12,22 @@ const createCaptchaSession = (sessionId, data) => {
   });
 };
 
+const closeSessionResources = async (session) => {
+  if (session?.page) {
+    await session.page.close().catch(() => {});
+  }
+  if (session?.browser) {
+    await session.browser.close().catch(() => {});
+  }
+};
+
 const getCaptchaSession = (sessionId) => {
   const session = captchaSessions.get(sessionId);
   if (!session) return null;
 
   if (Date.now() - session.createdAt > CAPTCHA_SESSION_TTL_MS) {
     captchaSessions.delete(sessionId);
+    closeSessionResources(session).catch(() => {});
     return null;
   }
 
@@ -25,7 +35,9 @@ const getCaptchaSession = (sessionId) => {
 };
 
 const deleteCaptchaSession = (sessionId) => {
+  const session = captchaSessions.get(sessionId);
   captchaSessions.delete(sessionId);
+  closeSessionResources(session).catch(() => {});
 };
 
 // Lightweight periodic cleanup for expired sessions.
@@ -33,6 +45,7 @@ setInterval(() => {
   for (const [sessionId, session] of captchaSessions.entries()) {
     if (Date.now() - session.createdAt > CAPTCHA_SESSION_TTL_MS) {
       captchaSessions.delete(sessionId);
+      closeSessionResources(session).catch(() => {});
     }
   }
 }, 60 * 1000).unref();
