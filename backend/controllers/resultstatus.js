@@ -1,11 +1,19 @@
-const { getResult } = require("../utils/resultCache.js");
+const { getResult, isPending } = require("../utils/resultCache.js");
 const getResultStatusController = (req, res) => {
-  console.log("STATUS HIT:", req.params.requestId);
+  const { requestId } = req.params;
+  console.log("STATUS HIT:", requestId);
 
-  const data = getResult(req.params.requestId);
+  const data = getResult(requestId);
 
   if (!data) {
-    return res.json({ status: "processing" });
+    if (isPending(requestId)) {
+      return res.json({ status: "processing" });
+    }
+    return res.json({
+      status: "done",
+      success: false,
+      message: "Request expired or invalid. Please submit again.",
+    });
   }
 
   res.json({ status: "done", ...data });

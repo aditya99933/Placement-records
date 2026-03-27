@@ -1,5 +1,6 @@
 const { v4: uuid } = require('uuid');
 const { jobQueue, MAX_QUEUE_SIZE } = require('../utils/jobQueue.js');
+const { markPending } = require("../utils/resultCache.js");
 
 const fetchResultController = (req, res, next) => {
   try {
@@ -27,6 +28,7 @@ const fetchResultController = (req, res, next) => {
     }
 
     const requestId = uuid();
+    markPending(requestId);
 
     jobQueue.push({
       id: requestId,

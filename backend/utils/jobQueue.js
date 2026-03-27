@@ -17,6 +17,7 @@ const decrementWorkers = () => {
  
 module.exports = {
   jobQueue,
+  MAX_WORKERS,
   MAX_QUEUE_SIZE,
   getActiveWorkers,
   incrementWorkers,
