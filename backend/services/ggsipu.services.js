@@ -11,7 +11,7 @@ const logicandFetchHtml = async ({
   captcha,
 }) => {
   const url = "https://examweb.ggsipu.ac.in/web/login.jsp";
-  const navTimeoutMs = Number(process.env.CAPTCHA_NAV_TIMEOUT_MS || 30000);
+  const navTimeoutMs = Number(process.env.CAPTCHA_NAV_TIMEOUT_MS || 60000);
 
   const session = getCaptchaSession(sessionId);
   if (!session) {
@@ -58,16 +58,32 @@ const logicandFetchHtml = async ({
 
     await Promise.all([
       page.click('button[type="submit"], input[type="submit"]'),
-      page.waitForNavigation({ waitUntil: "domcontentloaded" }),
+      page.waitForNavigation({ waitUntil: "networkidle2", timeout: navTimeoutMs }),
     ]);
 
     // ❗ LOGIN FAILURE CHECK (RIGHT PLACE)
     if (page.url().includes("login.jsp")) {
-      throw new Error("Invalid credentials or captcha");
+      const bodyText = await page.evaluate(() => document.body?.innerText || "");
+      throw new Error(
+        `Login failed (still on login.jsp). Possible invalid credentials/captcha. Page says: ${bodyText
+          .trim()
+          .slice(0, 200)}`
+      );
     }
 
     // ===== DASHBOARD =====
-    await page.waitForSelector("#euno", { timeout: 30000 });
+    try {
+      await page.waitForSelector("#euno", { timeout: navTimeoutMs });
+    } catch (e) {
+      // Fallback: sometimes the portal changes ids; try broader selectors.
+      const bodyText = await page.evaluate(() => document.body?.innerText || "");
+      const currentUrl = page.url();
+      throw new Error(
+        `Dashboard not loaded (missing #euno). url=${currentUrl}. Page says: ${bodyText
+          .trim()
+          .slice(0, 200)}`
+      );
+    }
 
     // select ALL
     await page.evaluate(() => {
