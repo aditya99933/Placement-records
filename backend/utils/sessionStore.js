@@ -50,8 +50,34 @@ setInterval(() => {
   }
 }, 60 * 1000).unref();
 
+
+// 🔥 GLOBAL COOKIE (shared session)
+let globalCookie = null;
+let cookieCreatedAt = null;
+
+const COOKIE_TTL = 10 * 60 * 1000; // 10 min
+
+const setGlobalCookie = (cookie) => {
+  globalCookie = cookie;
+  cookieCreatedAt = Date.now();
+};
+
+const getGlobalCookie = () => {
+  if (!globalCookie) return null;
+
+  if (Date.now() - cookieCreatedAt > COOKIE_TTL) {
+    globalCookie = null;
+    return null;
+  }
+
+  return globalCookie;
+};
+
+
 module.exports = {
   createCaptchaSession,
   getCaptchaSession,
   deleteCaptchaSession,
+  setGlobalCookie,
+  getGlobalCookie
 };
