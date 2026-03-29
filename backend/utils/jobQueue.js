@@ -2,8 +2,8 @@ const jobQueue = [];
 
 let activeWorkers = 0; // 👈 private to this module
 
-const MAX_WORKERS = 2;
-const MAX_QUEUE_SIZE = 100;
+const MAX_WORKERS = 1;
+const MAX_QUEUE_SIZE = 10;
 
 const getActiveWorkers = () => activeWorkers;
 
@@ -12,7 +12,7 @@ const incrementWorkers = () => {
 };
 
 const decrementWorkers = () => {
-  activeWorkers--;
+  activeWorkers = Math.max(0, activeWorkers - 1); // 🔥 SAFE
 };
  
 module.exports = {
