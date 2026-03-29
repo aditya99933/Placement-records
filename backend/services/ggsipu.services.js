@@ -14,7 +14,7 @@ const logicandFetchHtml = async ({ sessionId, enrollment, password, captcha }) =
   // 🔥 STEP 1: Try existing cookie (NO PUPPETEER)
   let cookie = getGlobalCookie();
 
-  const resultUrl = `https://examweb.ggsipu.ac.in/StudentSearchProcess?flag=2&euno=${enrollment}`;
+  const resultUrl = `https://examweb.ggsipu.ac.in/web/StudentSearchProcess?flag=2&euno=${enrollment}`;
 
   if (cookie) {
     try {
