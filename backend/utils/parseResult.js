@@ -41,7 +41,7 @@ const parseResult = (html) => {
     const cols = $(row).find("td");
 
     // Safety check
-    if (cols.length < 6) return;
+    if (cols.length < 8) return;
 
     const semester = $(cols[0]).text().trim();
     const paperCode = $(cols[1]).text().trim();
