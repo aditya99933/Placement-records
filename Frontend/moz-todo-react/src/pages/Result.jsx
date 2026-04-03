@@ -28,6 +28,7 @@ const Result = () => {
               enrollment={enrollment}
               setEnrollment={setEnrollment}
               setResult={setResult}
+              status={status}
               setStatus={setStatus}
               goNext={() => setStep(3)}
              />

@@ -1,7 +1,6 @@
 const { getResult, isPending } = require("../utils/resultCache.js");
 const getResultStatusController = (req, res) => {
   const { requestId } = req.params;
-  console.log("STATUS HIT:", requestId);
 
   const data = getResult(requestId);
 

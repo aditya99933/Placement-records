@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { initCaptcha, fetchResult, checkStatus } from "../api/resultApi";
 import { Eye, EyeOff, RefreshCw } from "lucide-react";
 
-export default function ResultForm({ setResult, setStatus, goNext, enrollment }) {
+export default function ResultForm({ setResult, status, setStatus, goNext, enrollment }) {
 
   const [form, setForm] = useState({
     enrollment: enrollment || "",
