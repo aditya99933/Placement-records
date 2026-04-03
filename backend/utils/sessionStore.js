@@ -1,8 +1,9 @@
 const captchaSessions = new Map();
-// Production note: users often take time to read captcha / type credentials.
-// Default 10 minutes; override via CAPTCHA_SESSION_TTL_MS env.
+
+// Production note: Reducing TTL to 2 minutes for Render Free Tier (512MB RAM)
+// This ensures unused browsers are closed almost immediately to free up memory.
 const CAPTCHA_SESSION_TTL_MS = Number(
-  process.env.CAPTCHA_SESSION_TTL_MS || 10 * 60 * 1000
+  process.env.CAPTCHA_SESSION_TTL_MS || 2 * 60 * 1000
 );
 
 const createCaptchaSession = (sessionId, data) => {
@@ -36,11 +37,14 @@ const getCaptchaSession = (sessionId) => {
 
 const deleteCaptchaSession = (sessionId) => {
   const session = captchaSessions.get(sessionId);
-  captchaSessions.delete(sessionId);
-  closeSessionResources(session).catch(() => {});
+  if (session) {
+    captchaSessions.delete(sessionId);
+    // Fires and forgets closing to unblock the main thread
+    closeSessionResources(session).catch(() => {});
+  }
 };
 
-// Lightweight periodic cleanup for expired sessions.
+// More frequent cleanup (every 20 seconds) to purge stale browser instances aggressively
 setInterval(() => {
   for (const [sessionId, session] of captchaSessions.entries()) {
     if (Date.now() - session.createdAt > CAPTCHA_SESSION_TTL_MS) {
@@ -48,36 +52,15 @@ setInterval(() => {
       closeSessionResources(session).catch(() => {});
     }
   }
-}, 60 * 1000).unref();
+}, 20 * 1000).unref();
 
-
-// 🔥 GLOBAL COOKIE (shared session)
-let globalCookie = null;
-let cookieCreatedAt = null;
-
-const COOKIE_TTL = 10 * 60 * 1000; // 10 min
-
-const setGlobalCookie = (cookie) => {
-  globalCookie = cookie;
-  cookieCreatedAt = Date.now();
-};
-
-const getGlobalCookie = () => {
-  if (!globalCookie) return null;
-
-  if (Date.now() - cookieCreatedAt > COOKIE_TTL) {
-    globalCookie = null;
-    return null;
-  }
-
-  return globalCookie;
-};
-
+/* 🔥 GLOBAL COOKIE REMOVED 🔥
+   A shared global cookie is dangerous for 2000 concurrent users as it overwrites session data.
+   Each student session should have its own browser/cookie logic.
+*/
 
 module.exports = {
   createCaptchaSession,
   getCaptchaSession,
-  deleteCaptchaSession,
-  setGlobalCookie,
-  getGlobalCookie
+  deleteCaptchaSession
 };

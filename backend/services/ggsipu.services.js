@@ -6,8 +6,6 @@ const path = require("path");
 const {
   getCaptchaSession,
   deleteCaptchaSession,
-  getGlobalCookie,
-  setGlobalCookie
 } = require("../utils/sessionStore.js");
 
 const navTimeoutMs = Number(process.env.CAPTCHA_NAV_TIMEOUT_MS || 60000);
@@ -15,26 +13,6 @@ const navTimeoutMs = Number(process.env.CAPTCHA_NAV_TIMEOUT_MS || 60000);
 const logicandFetchHtml = async ({ sessionId, enrollment, password, captcha }) => {
 
 
-  // 🔥 STEP 1: Try existing cookie (NO PUPPETEER)
-  let cookie = getGlobalCookie();
-
-  const resultUrl = `https://examweb.ggsipu.ac.in/web/StudentSearchProcess?flag=2&euno=100`;
-
-  if (cookie) {
-    try {
-      const res = await axios.get(resultUrl, {
-        headers: {
-          "User-Agent": "Mozilla/5.0",
-          "Cookie": cookie,
-        },
-        timeout: 30000,
-      });
-
-      return res.data;
-    } catch (err) {
-      // Cookie invalid or expired, continue to Puppeteer flow
-    }
-  }
 
   // 🔴 STEP 2: Puppeteer login (only if needed)
   const session = getCaptchaSession(sessionId);
@@ -93,8 +71,6 @@ const logicandFetchHtml = async ({ sessionId, enrollment, password, captcha }) =
 
     const cookieString = `JSESSIONID=${jsessionid}`;
 
-    // 🔥 SAVE GLOBAL COOKIE
-    setGlobalCookie(cookieString);
 
     // ===== FETCH RESULT =====
     const semsToTry = [100, 1, 2, 3, 4, 5, 6, 7, 8];
