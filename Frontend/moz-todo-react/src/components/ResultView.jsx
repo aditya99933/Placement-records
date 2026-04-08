@@ -35,26 +35,43 @@ const ResultView = ({ result}) => {
           setSelected={setSelectedSemester}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-6">
           <GPAline subjects={result.subjects} />
           <GPAPie subjects={result.subjects} />
         </div>
 
         {semStats ? (
-          <div className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold mb-6 text-white">{semStats.semester} Summary</h3>
-            <div className="grid grid-cols-3 gap-6 text-center">
-              <div className="bg-[#1a2332] rounded-xl p-5">
-                <p className="text-gray-400 text-sm mb-1">Total Marks</p>
-                <p className="text-3xl font-bold text-white">{semStats.totalMarks}</p>
+          <div className="bg-[#111827] border border-gray-800 rounded-3xl p-6 md:p-10 shadow-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* MARKS */}
+              <div className="space-y-2">
+                <label className="text-gray-500 text-xs font-bold uppercase tracking-widest">Marks</label>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-5xl font-black text-green-500">{semStats.totalMarks}</span>
+                  <span className="text-2xl font-bold text-gray-600">/ {semStats.maxMarks}</span>
+                </div>
+                <p className="text-gray-500 text-sm">Total Marks Obtained</p>
               </div>
-              <div className="bg-[#1a2332] rounded-xl p-5">
-                <p className="text-gray-400 text-sm mb-1">Percentile</p>
-                <p className="text-3xl font-bold text-white">{semStats.percentile}%</p>
+
+              {/* SGPA */}
+              <div className="space-y-2">
+                <label className="text-gray-500 text-xs font-bold uppercase tracking-widest">SGPA</label>
+                <p className="text-5xl font-black text-white">{semStats.sgpa}</p>
+                <p className="text-gray-500 text-sm">Semester Grade Point Average</p>
               </div>
-              <div className="bg-[#1a2332] rounded-xl p-5">
-                <p className="text-gray-400 text-sm mb-1">SGPA</p>
-                <p className="text-3xl font-bold text-green-400">{semStats.sgpa}</p>
+
+              {/* PERCENTAGE */}
+              <div className="space-y-2">
+                <label className="text-gray-500 text-xs font-bold uppercase tracking-widest">Percentage</label>
+                <p className="text-5xl font-black text-green-500">{semStats.percentile}%</p>
+                <p className="text-gray-500 text-sm">Percentage of Marks Obtained</p>
+              </div>
+
+              {/* TOTAL CREDITS */}
+              <div className="space-y-2">
+                <label className="text-gray-500 text-xs font-bold uppercase tracking-widest">Total Credits</label>
+                <p className="text-5xl font-black text-white">{ "-"}</p>
+                <p className="text-gray-500 text-sm">Total Credits for the Semester</p>
               </div>
             </div>
           </div>

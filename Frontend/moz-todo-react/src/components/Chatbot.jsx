@@ -34,7 +34,7 @@ const Chatbot = ({ onAuthSuccess }) => {
         setLoading(false);
     };
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
       
       {/* Toast Notification */}
@@ -45,25 +45,26 @@ const Chatbot = ({ onAuthSuccess }) => {
           onClose={() => setToast(null)}
         />
       )}
-      <div className="min-h-screen bg-black text-white pb-20 md:pb-0">
-        <div className="max-w-md mx-auto px-4 py-8">
-          <div className="bg-gray-900 rounded-2xl p-6 shadow-lg">
+
+      <main className="flex-grow flex items-center justify-center p-4">
+        <div className="max-w-md w-full">
+          <div className="bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-800">
             <h2 className="text-2xl font-bold text-green-500 mb-6 text-center">
               {isLogin ? "Login" : "Signup"}
             </h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
-                className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
+                className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none transition-colors"
                 type="email"
-                placeholder="Email"
+                placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
               
               <input
-                className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none"
+                className="w-full p-3 bg-gray-800 text-white rounded border border-gray-700 focus:border-green-500 outline-none transition-colors"
                 type="password"
                 placeholder="Password"
                 value={password}
@@ -72,7 +73,7 @@ const Chatbot = ({ onAuthSuccess }) => {
               />
               
               {error && (
-                <div className="text-red-400 text-sm bg-red-900/20 p-3 rounded">
+                <div className="text-red-400 text-sm bg-red-900/20 p-3 rounded border border-red-900/50">
                   {error}
                 </div>
               )}
@@ -80,7 +81,7 @@ const Chatbot = ({ onAuthSuccess }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-green-600 text-white rounded hover:bg-green-700 transition disabled:opacity-50"
+                className="w-full py-3 bg-green-600 text-white rounded font-semibold hover:bg-green-700 transition duration-300 disabled:opacity-50"
               >
                 {loading ? "Processing..." : isLogin ? "Login" : "Signup"}
               </button>
@@ -89,7 +90,7 @@ const Chatbot = ({ onAuthSuccess }) => {
             <p className="mt-6 text-center text-gray-300">
               {isLogin ? "New user? " : "Already have an account? "}
               <button
-                className="text-green-400 hover:text-green-300 underline"
+                className="text-green-400 hover:text-green-300 underline font-medium"
                 onClick={() => setIsLogin(!isLogin)}
               >
                 {isLogin ? "Create an account" : "Login here"}
@@ -97,9 +98,12 @@ const Chatbot = ({ onAuthSuccess }) => {
             </p>
           </div>
         </div>
+      </main>
+
+      <div className="mb-20 md:mb-0">
+        <Footer />
       </div>
-      <Footer />
-    </>
+    </div>
   )
 }
 

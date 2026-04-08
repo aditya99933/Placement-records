@@ -40,7 +40,7 @@ const GPAline = ({subjects}) => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
@@ -63,11 +63,13 @@ const GPAline = ({subjects}) => {
   };
 
   return (
-    <div className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6">
+    <div className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6 h-[400px] flex flex-col">
       <h3 className="text-xl font-semibold mb-4 text-white">
         Overall GPA Trend
       </h3>
-      <Line data={chartData} options={options} />
+      <div className="flex-grow">
+        <Line data={chartData} options={options} />
+      </div>
     </div>
   )
 }

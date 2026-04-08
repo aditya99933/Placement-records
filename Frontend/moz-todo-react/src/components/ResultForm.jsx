@@ -84,8 +84,8 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      <div className="w-full max-w-lg bg-[#0f1115] border border-green-500/30 rounded-2xl p-8 shadow-xl">
+    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="w-full max-w-lg bg-[#0f1115] border border-green-500/30 rounded-2xl p-6 sm:p-10 shadow-xl overflow-hidden">
 
         {locked ? (
           <div className="text-center py-10">
@@ -95,18 +95,18 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
           </div>
         ) : (
           <>
-            <h1 className="text-3xl font-bold text-center text-white mb-2">IPU Result Portal</h1>
-            <p className="text-gray-400 text-center mb-8">Enter your credentials to view your result analysis</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-center text-white mb-2">IPU Result Portal</h1>
+            <p className="text-gray-400 text-sm text-center mb-8">Enter your credentials to view your result analysis</p>
 
             {/* Status Display */}
-            <div className="text-center mb-4 text-green-400 text-sm">{status}</div>
+            <div className="text-center mb-4 text-green-400 text-sm italic h-5">{status}</div>
 
             {/* Warning Box */}
-            <details className="mb-6 bg-red-950/50 border border-red-500/50 rounded-xl">
-              <summary className="px-4 py-3 text-red-400 font-semibold cursor-pointer select-none">
+            <details className="mb-6 bg-red-950/20 border border-red-500/30 rounded-xl overflow-hidden group">
+              <summary className="px-4 py-3 text-red-400 font-semibold cursor-pointer select-none text-sm sm:text-base hover:bg-red-950/40 transition">
                 ⚠ Important Password Information
               </summary>
-              <ul className="px-5 pb-4 pt-2 space-y-2 text-red-300 text-sm list-disc list-inside">
+              <ul className="px-5 pb-4 pt-2 space-y-2 text-red-300/80 text-xs sm:text-sm list-disc list-inside bg-red-950/10">
                 <li>Default password is your father's full name in <strong>CAPITAL LETTERS</strong></li>
                 <li>Ensure proper spacing between words as per university registration</li>
                 <li><strong>Warning:</strong> 3 incorrect attempts will temporarily lock your account</li>
@@ -116,62 +116,66 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
             <form onSubmit={handleSubmit} className="space-y-5">
 
               <div>
-                <label className="text-sm text-gray-300">Enrollment Number</label>
+                <label className="text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-widest">Enrollment Number</label>
                 <input
                   name="enrollment"
                   placeholder="Enter Enrollment No."
                   value={form.enrollment}
-                  className="w-full mt-2 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500"
+                  className="w-full mt-2 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500 transition-all font-mono"
                   onChange={handleChange}
                 />
               </div>
 
               <div>
-                <label className="text-sm text-gray-300">Password</label>
+                <label className="text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-widest">Password</label>
                 <div className="relative mt-2">
                   <input
                     name="password"
                     placeholder="Enter Password"
                     type={showPassword ? "text" : "password"}
-                    className="w-full bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500"
+                    className="w-full bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500 transition-all"
                     onChange={handleChange}
                   />
-                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3 text-gray-400">
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3.5 text-gray-400 hover:text-green-500 transition">
                     {showPassword ? <EyeOff size={18}/> : <Eye size={18}/>}
                   </button>
                 </div>
               </div>
 
               <div>
-                <label className="text-sm text-gray-300">Captcha</label>
-                <div className="flex gap-3 mt-2 items-center">
+                <label className="text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-widest">Captcha</label>
+                <div className="flex flex-col sm:flex-row gap-3 mt-2 sm:items-center">
                   <input
                     name="captcha"
                     placeholder="ENTER CAPTCHA"
-                    className="flex-1 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500"
+                    className="flex-1 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500 transition-all uppercase placeholder:normal-case font-mono"
                     onChange={handleChange}
                   />
-                  {captchaImage && (
-                    <img src={`data:image/png;base64,${captchaImage}`} alt="captcha" className="h-[48px] rounded border border-gray-700" />
-                  )}
-                  <button type="button" onClick={loadCaptcha} className="bg-[#161a20] border border-gray-700 rounded-lg px-3 h-[48px] flex items-center justify-center">
-                    <RefreshCw size={18}/>
-                  </button>
+                  <div className="flex gap-2 items-center">
+                    {captchaImage && (
+                      <img src={`data:image/png;base64,${captchaImage}`} alt="captcha" className="h-[48px] w-32 rounded border border-gray-700 bg-white/5 object-contain px-1" />
+                    )}
+                    <button type="button" onClick={loadCaptcha} className="bg-[#161a20] border border-gray-700 rounded-lg px-4 h-[48px] flex items-center justify-center hover:bg-gray-800 transition active:scale-95 text-gray-400 hover:text-green-500" title="Refresh Captcha">
+                      <RefreshCw size={18}/>
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-gray-300 text-sm">
-                <input type="checkbox" name="consent" onChange={handleChange} />
-                I give consent
+              <div className="flex items-center gap-3 text-gray-400 text-xs sm:text-sm select-none">
+                <input type="checkbox" name="consent" onChange={handleChange} className="w-4 h-4 rounded border-gray-700 bg-gray-800 accent-green-500" />
+                <span>I give consent to fetch my data</span>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-green-400 hover:bg-green-500 disabled:opacity-70 disabled:cursor-not-allowed text-black font-semibold py-3 rounded-lg transition"
+                className="w-full bg-green-500 hover:bg-green-600 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-500/10 active:scale-[0.98]"
               >
                 {loading ? (
-                  <span className="text-green-900 animate-pulse">Logging in...</span>
+                  <span className="flex items-center justify-center gap-2">
+                    <RefreshCw className="animate-spin" size={18}/> Logging in...
+                  </span>
                 ) : "Login"}
               </button>
 

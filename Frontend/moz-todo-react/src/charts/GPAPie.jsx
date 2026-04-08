@@ -34,7 +34,7 @@ const GPAPie = ({subjects}) => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "bottom",
@@ -47,11 +47,13 @@ const GPAPie = ({subjects}) => {
   };
   
   return (
-    <div className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6">
+    <div className="bg-[#0f172a] border border-gray-700 rounded-2xl p-6 h-[400px] flex flex-col">
       <h3 className="text-xl font-semibold mb-4 text-white">
         Grade Distribution
       </h3>
-      <Pie data={chartData} options={options} />
+      <div className="flex-grow flex items-center justify-center">
+        <Pie data={chartData} options={options} />
+      </div>
     </div>
   )
 }

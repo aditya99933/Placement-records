@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to="/" className={`px-3 py-1 rounded transition ${pathname === '/' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Home</Link>
             <Link to="/placement" className={`px-3 py-1 rounded transition ${pathname === '/placement' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Placement</Link>
             <Link to="/result" className={`px-3 py-1 rounded transition ${pathname === '/result' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>GGSIPU Result</Link>
-            <Link to="/jobs" className={`px-3 py-1 rounded transition ${pathname === '/jobs' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Jobs</Link>
+            <Link to="/jobs" className={`px-3 py-1 rounded transition ${pathname === '/jobs' || pathname === '/campus' || pathname.startsWith('/job-details') ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Jobs</Link>
             <Link to="/notes" className={`px-3 py-1 rounded transition ${pathname === '/notes' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Notes</Link>
             <Link to="/ai" className={`px-3 py-1 rounded transition ${pathname === '/ai' ? 'bg-green-500 text-white' : 'text-white hover:text-green-500'}`}>Chatbot</Link>
           </div>
@@ -99,9 +99,9 @@ const Navbar = () => {
             <span className="text-xs mt-1">Result</span>
           </Link>
           <Link 
-            to="/jobs" 
+            to="/jobs"
             className={`flex flex-col items-center p-2 rounded transition ${
-              pathname === '/jobs' ? 'text-green-500' : 'text-gray-400 hover:text-green-500'
+              pathname === '/jobs' || pathname === '/campus' || pathname.startsWith('/job-details') ? 'text-green-500' : 'text-gray-400 hover:text-green-500'
             }`}
           >
             <Briefcase className="w-5 h-5" />

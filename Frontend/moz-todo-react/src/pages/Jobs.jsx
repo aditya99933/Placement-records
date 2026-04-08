@@ -83,7 +83,9 @@ const Jobs = () => {
       {/* 🔥 Conditional Rendering */}
       {isCampusPage ? <Campus /> : <JobList showFilters />}
 
-      <Footer />
+      <div className="mb-18 md:mb-0">
+        <Footer />
+      </div>
     </>
   );
 };

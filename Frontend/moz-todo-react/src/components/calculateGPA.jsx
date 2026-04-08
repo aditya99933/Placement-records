@@ -69,6 +69,7 @@ export function calculateSemesterGpa(subjects) {
       credits: totalCredits,
       subjects: deduped.length,
       totalMarks,
+      maxMarks,
       percentile,
     };
   });

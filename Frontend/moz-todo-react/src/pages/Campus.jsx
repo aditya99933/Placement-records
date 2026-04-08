@@ -50,7 +50,7 @@ const Campus = () => {
   };
 
   return (
-    <div className="bg-black text-white pb-20 ">
+    <div className="bg-black text-white pb-6 ">
       <div className="max-w-7xl mx-auto px-4 ">
 
         {loading ? (

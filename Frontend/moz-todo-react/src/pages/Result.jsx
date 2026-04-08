@@ -38,7 +38,9 @@ const Result = () => {
           )}
         </div>
       </div>
-      <Footer />
+      <div className='mb-18 md:mb-0 '>
+        <Footer />
+      </div>
     </div>
   )
 }

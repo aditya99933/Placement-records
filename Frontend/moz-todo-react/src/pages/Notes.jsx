@@ -68,7 +68,7 @@ const Notes = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white pb-20 md:pb-0">
+    <div className="min-h-screen bg-black text-white flex flex-col">
       <Navbar />
 
       {/* Toast Notification */}
@@ -80,57 +80,61 @@ const Notes = () => {
         />
       )}
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold text-green-500 mb-6 text-left">Study Notes</h1>
+      <main className="flex-grow py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-2xl font-bold text-green-500 mb-6 text-left">Study Notes</h1>
 
-        {loading ? (
-          <div className="text-center text-gray-400">Loading notes...</div>
-        ) : notes.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {notes.map((note) => (
-              <div key={note._id} className="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow relative">
+          {loading ? (
+            <div className="text-center text-gray-400">Loading notes...</div>
+          ) : notes.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {notes.map((note) => (
+                <div key={note._id} className="bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow relative">
 
-                {/* Delete Button - Top Right Corner */}
-                {isAdmin && (
+                  {/* Delete Button - Top Right Corner */}
+                  {isAdmin && (
+                    <button
+                      onClick={() => handleDelete(note._id)}
+                      className="absolute top-2 right-2 p-2 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded transition"
+                      title="Delete Note"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
+
+                  {/* Note Icon */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <FileText className="w-8 h-8 text-blue-400" />
+                    <h3 className="text-xl font-semibold text-white">{note.title}</h3>
+                  </div>
+
+                  {/* Upload Date */}
+                  <div className="text-gray-400 text-sm mb-4">
+                    Uploaded: {new Date(note.createdAt).toLocaleDateString()}
+                  </div>
+
+                  {/* Download Button */}
                   <button
-                    onClick={() => handleDelete(note._id)}
-                    className="absolute top-2 right-2 p-2 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded transition"
-                    title="Delete Note"
+                    onClick={() => handleDownload(note.pdfUrl, note.title)}
+                    className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition w-full justify-center"
                   >
-                    <Trash2 className="w-4 h-4" />
+                    <Download className="w-4 h-4" />
+                    Download PDF
                   </button>
-                )}
-
-                {/* Note Icon */}
-                <div className="flex items-center gap-3 mb-4">
-                  <FileText className="w-8 h-8 text-blue-400" />
-                  <h3 className="text-xl font-semibold text-white">{note.title}</h3>
                 </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-gray-400">
+              <p>No notes available at the moment.</p>
+            </div>
+          )}
+        </div>
+      </main>
 
-                {/* Upload Date */}
-                <div className="text-gray-400 text-sm mb-4">
-                  Uploaded: {new Date(note.createdAt).toLocaleDateString()}
-                </div>
-
-                {/* Download Button */}
-                <button
-                  onClick={() => handleDownload(note.pdfUrl, note.title)}
-                  className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition w-full justify-center"
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </button>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center text-gray-400">
-            <p>No notes available at the moment.</p>
-          </div>
-        )}
+      <div className="mb-20 md:mb-0">
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 };
