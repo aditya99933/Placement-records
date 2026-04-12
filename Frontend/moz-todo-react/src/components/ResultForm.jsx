@@ -148,7 +148,7 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
                   <input
                     name="captcha"
                     placeholder="ENTER CAPTCHA"
-                    className="flex-1 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500 transition-all uppercase placeholder:normal-case font-mono"
+                    className="flex-1 bg-[#161a20] border border-gray-700 rounded-lg px-4 py-3 text-white outline-none focus:border-green-500 transition-all font-mono"
                     onChange={handleChange}
                   />
                   <div className="flex gap-2 items-center">
