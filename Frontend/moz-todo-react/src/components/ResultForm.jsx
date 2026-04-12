@@ -17,6 +17,7 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
   const [attempts, setAttempts] = useState(3);
   const [locked, setLocked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState(null);
 
   useEffect(() => {
     loadCaptcha();
@@ -44,7 +45,14 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
 
     if (!response.success) {
       setLoading(false);
-      setStatus(response.message);
+      const newAttempts = attempts - 1;
+      setAttempts(newAttempts);
+      if (newAttempts <= 0) {
+        setLocked(true);
+      } else {
+        setLoginError({ message: response.message || "Invalid credentials.", attempts: newAttempts });
+        loadCaptcha();
+      }
       return;
     }
 
@@ -61,16 +69,23 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
         clearInterval(interval);
         setLoading(false);
         if (!statusRes.success) {
-          const newAttempts = attempts - 1;
-          setAttempts(newAttempts);
-          if (newAttempts <= 0) {
-            setLocked(true);
-            setStatus("");
-          } else {
-            setStatus(`❌ Invalid credentials. ${newAttempts} attempt(s) remaining.`);
+          const msg = statusRes.message || "";
+          const isCaptchaError = /captcha/i.test(msg);
+          if (isCaptchaError) {
+            setLoginError({ message: "Captcha validation failed. Please try again.", attempts, isCaptcha: true });
             loadCaptcha();
+          } else {
+            const newAttempts = attempts - 1;
+            setAttempts(newAttempts);
+            if (newAttempts <= 0) {
+              setLocked(true);
+            } else {
+              setLoginError({ message: msg || "Invalid credentials.", attempts: newAttempts });
+              loadCaptcha();
+            }
           }
         } else {
+          setLoginError(null);
           setStatus("Result fetched ✅");
           setResult(statusRes.data);
           goNext();
@@ -100,6 +115,19 @@ export default function ResultForm({ setResult, status, setStatus, goNext, enrol
 
             {/* Status Display */}
             <div className="text-center mb-4 text-green-400 text-sm italic h-5">{status}</div>
+
+            {loginError && (
+              <div className="mb-4 bg-red-950/30 border border-red-500/50 rounded-xl px-4 py-3 flex items-start gap-3">
+                <span className="text-red-400 text-lg mt-0.5">{loginError.isCaptcha ? "🔄" : "❌"}</span>
+                <div>
+                  <p className="text-red-400 font-semibold text-sm">{loginError.isCaptcha ? "Captcha Error" : "Login Error"}</p>
+                  <p className="text-red-300/80 text-xs mt-0.5">{loginError.message}</p>
+                  {!loginError.isCaptcha && (
+                    <p className="text-red-300/80 text-xs mt-1">Attempts remaining: <span className="font-bold text-red-400">{loginError.attempts}</span></p>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Warning Box */}
             <details className="mb-6 bg-red-950/20 border border-red-500/30 rounded-xl overflow-hidden group">
